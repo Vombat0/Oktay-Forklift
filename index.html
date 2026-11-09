@@ -7,6 +7,20 @@
     <meta name="description" content="Oktay Forklift Servisi (Hüseyin Oktay); dizel, akülü ve LPG'li forkliftler için 7/24 yerinde mobil arıza tespiti, periyodik bakım, motor-şanzıman revizyonu ve garantili yedek parça hizmeti sunar. Hemen Arayın: 0533 954 04 25">
     <meta name="keywords" content="forklift servisi, oktay forklift servisi, hüseyin oktay forklift, forklift tamiri, forklift periyodik bakım, akülü forklift tamiri, dizel forklift servisi, forklift yedek parça">
 
+    <!-- Google Arama Motoru İçin Yapısal Veri (LocalBusiness Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Oktay Forklift Servisi - Hüseyin Oktay",
+      "description": "Dizel, akülü ve LPG'li forkliftler için 7/24 yerinde mobil arıza tespiti, periyodik bakım, motor-şanzıman revizyonu ve garantili yedek parça servisi.",
+      "telephone": "+905339540425",
+      "email": "aokty0@gmail.com",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "₺₺"
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,7 +236,12 @@
 
             <!-- Sağ: Acil Hat & Tema Değiştirici -->
             <div class="flex items-center gap-4 ml-auto">
-                <a href="tel:+905339250425" class="flex items-center gap-1.5 text-amber-300 hover:text-white font-mono font-bold transition-colors">
+                <a href="mailto:aokty0@gmail.com" class="hidden sm:flex items-center gap-1.5 text-slate-200 hover:text-white font-mono font-medium transition-colors">
+                    <svg class="w-3.5 h-3.5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span>aokty0@gmail.com</span>
+                </a>
+                <span class="hidden sm:inline-block text-white/25">|</span>
+                <a href="tel:+905339540425" class="flex items-center gap-1.5 text-amber-300 hover:text-white font-mono font-bold transition-colors">
                     <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     <span>0533 954 04 25</span>
                 </a>
@@ -511,48 +530,59 @@
                                 <div class="grid grid-cols-2 gap-2.5">
                                     <label class="cursor-pointer">
                                         <input type="radio" name="aciliyet_durumu" value="ACİL - Makina Duruşta" checked class="peer sr-only">
-                                        <div class="px-3 py-2 rounded-lg border theme-border theme-surface peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-xs font-bold theme-text flex items-center gap-2 transition-all">
-                                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                        <div class="px-3 py-2.5 rounded-lg border theme-border theme-surface peer-checked:border-amber-500 peer-checked:bg-amber-500/15 peer-checked:text-amber-500 text-xs font-bold theme-text flex items-center gap-2 transition-all">
+                                            <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
                                             <span>Acil (Makina Duruşta)</span>
                                         </div>
                                     </label>
                                     <label class="cursor-pointer">
-                                        <input type="radio" name="aciliyet_durumu" value="Planlı Bakım / Ekspertiz" class="peer sr-only">
-                                        <div class="px-3 py-2 rounded-lg border theme-border theme-surface peer-checked:border-sky-500 peer-checked:bg-sky-500/15 text-xs font-bold theme-text flex items-center gap-2 transition-all">
-                                            <span class="w-2 h-2 rounded-full bg-sky-500"></span>
-                                            <span>Planlı Bakım / Teklif</span>
+                                        <input type="radio" name="aciliyet_durumu" value="Planlı Bakım / Çalışıyor" class="peer sr-only">
+                                        <div class="px-3 py-2.5 rounded-lg border theme-border theme-surface peer-checked:border-sky-500 peer-checked:bg-sky-500/15 peer-checked:text-sky-500 text-xs font-bold theme-text flex items-center gap-2 transition-all">
+                                            <span class="w-2 h-2 rounded-full bg-sky-500 shrink-0"></span>
+                                            <span>Planlı Bakım / Çalışıyor</span>
                                         </div>
                                     </label>
                                 </div>
                             </div>
 
-                            <!-- Gönder Butonu -->
-                            <button id="dispatch-submit-btn" type="submit" class="w-full py-3.5 px-5 rounded-xl theme-btn-primary font-bold text-sm tracking-wide uppercase shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-                                <span id="dispatch-submit-text">Servis İş Emri Oluştur & Gönder</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
+                            <!-- Gönderim Seçenekleri (E-Posta Öncelikli + İsteğe Bağlı WhatsApp) -->
+                            <div class="space-y-2 pt-1">
+                                <button id="dispatch-submit-btn" type="submit" data-channel="email" class="w-full py-3.5 px-5 rounded-xl theme-btn-primary font-bold text-xs sm:text-sm tracking-wide uppercase shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <span id="dispatch-submit-text">Servis Talebini Gönder</span>
+                                </button>
+                                <p class="text-[11px] theme-muted text-center">
+                                    Talebiniz doğrudan kurumsal servis sistemimize iletilir. Dilerseniz kayıt sonrasında e-posta uygulamanızla veya WhatsApp ile de gönderebilirsiniz.
+                                </p>
+                            </div>
                         </form>
 
-                        <!-- Dinamik Servis Kayıt Özeti (Form Gönderilince Sayfa Değişmeden Açılır) -->
+                        <!-- Dinamik Servis Kayıt Özeti (E-Posta + İsteğe Bağlı WhatsApp) -->
                         <div id="dispatch-result-box" class="hidden px-6 pb-6 pt-2 border-t theme-border theme-surface">
                             <div class="p-4 rounded-xl theme-card border border-emerald-500/50 shadow-sm">
                                 <div class="flex items-center justify-between mb-2">
                                     <span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-500">
                                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                        İş Emriniz Hazır — Hüseyin Oktay'a İletin
+                                        <span id="dispatch-status-label">Servis Talebiniz Kaydedildi!</span>
                                     </span>
                                     <span id="dispatch-ref-code" class="font-mono text-xs font-bold px-2 py-0.5 rounded theme-surface theme-accent-text">
                                         #OKT-2026
                                     </span>
                                 </div>
                                 <p id="dispatch-summary-text" class="text-xs theme-text-sec font-mono leading-relaxed mb-3"></p>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                    <a id="dispatch-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors">
-                                        <span>WhatsApp ile Gönder (0533 954 04 25)</span>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <a id="dispatch-mailto-link" href="mailto:aokty0@gmail.com" class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg theme-btn-primary text-xs font-bold transition-all">
+                                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                        <span>E-Posta / Outlook Uygulamasıyla Gönder</span>
                                     </a>
-                                    <a id="dispatch-tel-link" href="tel:+905339540425" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border theme-border theme-surface theme-text text-xs font-bold hover:opacity-80 transition-opacity">
-                                        <span>Doğrudan Ara: 0533 954 04 25</span>
-                                    </a>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <a id="dispatch-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors">
+                                            <span>İsteğe Bağlı: WhatsApp ile İlet</span>
+                                        </a>
+                                        <a id="dispatch-tel-link" href="tel:+905339540425" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border theme-border theme-surface theme-text text-xs font-bold hover:opacity-80 transition-opacity">
+                                            <span>Hemen Ara: 0533 954 04 25</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -681,7 +711,7 @@
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <div class="w-12 h-12 rounded-xl theme-surface theme-accent-text flex items-center justify-center">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.954-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.954 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.954 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.954 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             </div>
                             <span class="font-mono text-xs font-bold px-2.5 py-1 rounded theme-surface theme-muted">SRV-02 // AĞIR REVİZYON</span>
                         </div>
@@ -1111,7 +1141,7 @@
                                 <a href="tel:+905339540425" class="font-mono font-extrabold text-xl theme-text hover:opacity-80 block mt-0.5">
                                     0533 954 04 25
                                 </a>
-                                <span class="text-xs text-emerald-500 font-semibold">Hüseyin Oktay — Doğrudan Hat & WhatsApp</span>
+                                <span class="text-xs text-emerald-500 font-semibold">Hüseyin Oktay — Doğrudan Telefon Hattı</span>
                             </div>
                         </div>
                         <button type="button" onclick="copyTextToClipboard('05339540425', this)" class="px-2.5 py-1.5 rounded border theme-border theme-surface text-xs font-mono font-semibold theme-text cursor-pointer">
@@ -1119,16 +1149,35 @@
                         </button>
                     </div>
 
-                    <!-- WhatsApp Hızlı Bağlantı Kartı -->
+                    <!-- Kurumsal E-Posta Kartı (aokty0@gmail.com) -->
+                    <div class="p-5 rounded-xl theme-card border theme-border flex items-start justify-between gap-4 theme-shadow">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-lg theme-btn-primary flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-xs font-mono uppercase theme-muted">Resmi Servis & Teklif E-Posta Adresi</div>
+                                <a href="mailto:aokty0@gmail.com" class="font-mono font-extrabold text-lg sm:text-xl theme-text hover:opacity-80 block mt-0.5 break-all">
+                                    aokty0@gmail.com
+                                </a>
+                                <span class="text-xs theme-text-sec">Yazılı teklif, bakım sözleşmesi ve arıza bildirimleri</span>
+                            </div>
+                        </div>
+                        <button type="button" onclick="copyTextToClipboard('aokty0@gmail.com', this)" class="px-2.5 py-1.5 rounded border theme-border theme-surface text-xs font-mono font-semibold theme-text cursor-pointer shrink-0">
+                            Kopyala
+                        </button>
+                    </div>
+
+                    <!-- WhatsApp Hızlı Bağlantı Kartı (İsteğe Bağlı) -->
                     <div class="p-5 rounded-xl theme-card border theme-border flex items-center justify-between gap-4 theme-shadow">
                         <div class="flex items-start gap-4">
                             <div class="w-11 h-11 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs font-mono uppercase theme-muted">WhatsApp Konum & Arıza Videosu Hattı</div>
+                                <div class="text-xs font-mono uppercase theme-muted">Alternatif Hızlı Destek Hattı</div>
                                 <div class="font-display font-bold text-sm theme-text mt-0.5">Arıza Fotoğrafı / Videosu Gönderin</div>
-                                <span class="text-xs theme-text-sec">0533 954 04 25 üzerinden anında ön ekspertiz</span>
+                                <span class="text-xs theme-text-sec">0533 954 04 25 üzerinden görsel ön ekspertiz</span>
                             </div>
                         </div>
                         <a href="https://wa.me/905339540425?text=Merhaba%20H%C3%BCseyin%20Bey%2C%20forklift%20servisi%20ve%20ar%C4%B1za%20deste%C4%9Fi%20i%C3%A7in%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shrink-0">
@@ -1144,7 +1193,7 @@
                             Kurumsal Servis & Fiyat Teklifi Formu
                         </h3>
                         <p class="text-xs sm:text-sm theme-muted mb-6">
-                            Formu gönderdiğinizde bilgileriniz hem sistemimize kaydedilir hem de tek tıkla <strong>Hüseyin Oktay (0533 954 04 25)</strong> WhatsApp hattına hazır iş emri olarak aktarılır.
+                            Formu gönderdiğinizde talebiniz doğrudan kurumsal servis birimimize ve sistemimize iletilir. Dilerseniz e-posta uygulamanızla veya WhatsApp üzerinden de iletebilirsiniz.
                         </p>
 
                         <form id="corporate-contact-form" name="iletisim-teklif-formu" method="POST" data-netlify="true" class="space-y-4">
@@ -1201,30 +1250,37 @@
                                 <textarea id="contact-details" name="mesaj" rows="3" required placeholder="Forklift markası, modeli, çalışma saati veya yaşadığınız arıza hakkında kısaca bilgi veriniz..." class="w-full px-4 py-3 rounded-lg border theme-input text-sm"></textarea>
                             </div>
 
-                            <button id="corporate-submit-btn" type="submit" class="w-full py-4 px-6 rounded-xl theme-btn-primary font-bold text-sm uppercase tracking-wider shadow-md transition-all cursor-pointer">
-                                Kurumsal Talebi Kaydet ve Gönder
+                            <button id="corporate-submit-btn" type="submit" class="w-full py-4 px-6 rounded-xl theme-btn-primary font-bold text-sm uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span id="corporate-submit-text">Teklif ve Servis Talebini Gönder</span>
                             </button>
                         </form>
 
-                        <!-- Form Başarı Bildirimi + WhatsApp Köprüsü -->
+                        <!-- Form Başarı Bildirimi (E-Posta Öncelikli + İsteğe Bağlı WhatsApp) -->
                         <div id="contact-form-feedback" class="hidden mt-5 p-5 rounded-xl theme-surface border border-emerald-500/50">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="font-bold text-xs sm:text-sm text-emerald-500 flex items-center gap-2">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Talebiniz Kaydedildi!
+                                    <span id="contact-feedback-title">Talebiniz Başarıyla Alındı!</span>
                                 </span>
                                 <span id="contact-ref-badge" class="font-mono text-xs font-bold px-2.5 py-0.5 rounded bg-emerald-600 text-white">#OKT-2026</span>
                             </div>
                             <p class="text-xs theme-text-sec mb-4">
-                                Hızlı servis planlaması için aşağıdaki butona tıklayarak oluşturulan iş emrini doğrudan <strong>Hüseyin Oktay WhatsApp (0533 954 04 25)</strong> hattına iletebilirsiniz:
+                                Form verileriniz kaydedildi. Dilerseniz aşağıdaki butonları kullanarak doğrudan kendi <strong>E-Posta uygulamanızla</strong> veya isteğe bağlı olarak <strong>WhatsApp (0533 954 04 25)</strong> üzerinden de iletebilirsiniz:
                             </p>
-                            <div class="grid sm:grid-cols-2 gap-2.5">
-                                <a id="contact-wa-bridge" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-all">
-                                    <span>WhatsApp ile Hüseyin Oktay'a İlet</span>
+                            <div class="grid grid-cols-1 gap-2.5">
+                                <a id="contact-mailto-bridge" href="mailto:aokty0@gmail.com" class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg theme-btn-primary font-bold text-xs transition-all">
+                                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <span>E-Posta / Outlook Uygulamasıyla Gönder</span>
                                 </a>
-                                <a href="tel:+905339540425" class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border theme-border theme-card theme-text font-bold text-xs hover:opacity-80 transition-all">
-                                    <span>Hemen Ara: 0533 954 04 25</span>
-                                </a>
+                                <div class="grid sm:grid-cols-2 gap-2.5">
+                                    <a id="contact-wa-bridge" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-all">
+                                        <span>İsteğe Bağlı: WhatsApp ile İlet</span>
+                                    </a>
+                                    <a href="tel:+905339540425" class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border theme-border theme-card theme-text font-bold text-xs hover:opacity-80 transition-all">
+                                        <span>Hemen Ara: 0533 954 04 25</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1294,29 +1350,38 @@
                     <p class="text-xs text-slate-300 leading-relaxed mb-4">
                         Makinanız arızalandığında vakit kaybetmeyin. Mobil servis aracımız konumunuza hızla ulaşsın.
                     </p>
-                    <a href="tel:+905339540425" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white text-[#083054] font-mono font-bold text-xs hover:bg-slate-100">
-                        <span>0533 954 04 25</span>
-                    </a>
+                    <div class="flex flex-col gap-2">
+                        <a href="tel:+905339540425" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white text-[#083054] font-mono font-bold text-xs hover:bg-slate-100 w-fit">
+                            <span>0533 954 04 25</span>
+                        </a>
+                        <a href="mailto:aokty0@gmail.com" class="inline-flex items-center gap-2 text-xs font-mono text-sky-300 hover:text-white">
+                            <span>aokty0@gmail.com</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                 <p>&copy; 2026 Oktay Forklift Servisi — Hüseyin Oktay. Tüm Hakları Saklıdır.</p>
-                <p class="font-mono text-[11px]">7/24 Acil Servis: 0533 954 04 25</p>
+                <p class="font-mono text-[11px]">7/24 Acil Servis: 0533 954 04 25 | E-Posta: aokty0@gmail.com</p>
             </div>
         </div>
     </footer>
 
     <!-- =====================================================================
-         11. SABİT (FLOATING) WHATSAPP & HIZLI ARAMA AKSİYON ÇUBUĞU
+         11. SABİT (FLOATING) E-POSTA, WHATSAPP & HIZLI ARAMA AKSİYON ÇUBUĞU
     ====================================================================== -->
-    <div class="fixed bottom-4 right-4 z-50 flex flex-col sm:flex-row items-end sm:items-center gap-2.5">
-        <a href="https://wa.me/905339540425?text=Merhaba%20H%C3%BCseyin%20Bey%2C%20forklift%20servisi%20i%C3%A7in%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-lg border border-white/20 transition-all hover:scale-105">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
-            <span>WhatsApp Servis</span>
+    <div class="fixed bottom-4 right-4 z-50 flex flex-col sm:flex-row items-end sm:items-center gap-2">
+        <a href="mailto:aokty0@gmail.com?subject=Oktay%20Forklift%20Servisi%20-%20Servis%20ve%20Teklif%20Talebi" class="flex items-center gap-2 px-3.5 py-3 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs shadow-lg border border-white/20 transition-all hover:scale-105">
+            <svg class="w-4 h-4 text-sky-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span class="hidden sm:inline">E-Posta Gönder</span>
+        </a>
+        <a href="https://wa.me/905339540425?text=Merhaba%20H%C3%BCseyin%20Bey%2C%20forklift%20servisi%20i%C3%A7in%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-lg border border-white/20 transition-all hover:scale-105">
+            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+            <span>WhatsApp</span>
         </a>
         <a href="tel:+905339540425" class="flex items-center gap-2 px-4 py-3 rounded-full bg-[#083054] hover:bg-[#0d4273] text-white font-mono font-bold text-xs shadow-lg border border-white/20 transition-all hover:scale-105">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
             <span>0533 954 04 25</span>
         </a>
     </div>
@@ -1385,55 +1450,61 @@
                     menuCloseIcon.classList.add('hidden');
                 }
             });
-
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileDrawer.classList.add('hidden');
-                    menuOpenIcon.classList.remove('hidden');
-                    menuCloseIcon.classList.add('hidden');
-                });
-            });
         }
 
-        /* -------------------------------------------------------------------
-           3. HERO HIZLI ARIZA & SERVİS TALEP KONFİGÜRATÖRÜ (404 ÖNLEYİCİ)
-        -------------------------------------------------------------------- */
-        let selectedMachineType = 'Dizel Forklift';
-        const machineBtns = document.querySelectorAll('.machine-type-btn');
-        const dispatchMachineInput = document.getElementById('dispatch-machine-input');
+        // Mobil menüdeki linklere tıklandığında menüyü kapat
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            });
+        });
 
-        machineBtns.forEach(btn => {
+        /* -------------------------------------------------------------------
+           3. HIZLI ARIZA & SERVİS KAYDI FORMU
+        -------------------------------------------------------------------- */
+        const machineTypeBtns = document.querySelectorAll('.machine-type-btn');
+        const dispatchMachineInput = document.getElementById('dispatch-machine-input');
+        let selectedMachineType = 'Dizel Forklift';
+
+        machineTypeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
+                machineTypeBtns.forEach(b => {
+                    b.className = 'machine-type-btn px-3 py-2.5 rounded-lg border text-xs font-semibold text-left transition-all theme-surface theme-text theme-border cursor-pointer';
+                });
+                btn.className = 'machine-type-btn px-3 py-2.5 rounded-lg border text-xs font-bold text-left transition-all theme-btn-primary border-transparent cursor-pointer';
                 selectedMachineType = btn.getAttribute('data-machine');
                 if (dispatchMachineInput) {
                     dispatchMachineInput.value = selectedMachineType;
                 }
-                machineBtns.forEach(b => {
-                    b.className = 'machine-type-btn px-3 py-2.5 rounded-lg border text-xs font-semibold text-left transition-all theme-surface theme-text theme-border cursor-pointer';
-                    if (b.getAttribute('data-machine') === 'Akülü / Manuel Transpalet') {
-                        b.classList.add('col-span-2', 'sm:col-span-2');
-                    }
-                });
-                btn.className = 'machine-type-btn px-3 py-2.5 rounded-lg border text-xs font-bold text-left transition-all theme-btn-primary border-transparent cursor-pointer';
-                if (selectedMachineType === 'Akülü / Manuel Transpalet') {
-                    btn.classList.add('col-span-2', 'sm:col-span-2');
-                }
             });
         });
 
-        // Sayfayı Asla 404'e Yönlendirmeyen Güvenli Netlify Forms Kayıt Fonksiyonu
-        async function submitToNetlifyForms(formElement) {
+        // Sayfayı Asla 404'e Yönlendirmeyen Çift Kanallı (aokty0@gmail.com + Netlify) Kayıt Fonksiyonu
+        async function submitFormToCloudAndEmail(formElement, emailPayload) {
+            // 1. Netlify Forms Arka Plan Kaydı
             try {
                 const formData = new FormData(formElement);
                 const encodedBody = new URLSearchParams(formData).toString();
-                await fetch('/', {
+                fetch('/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: encodedBody
+                }).catch(() => {});
+            } catch (err) {}
+
+            // 2. Doğrudan aokty0@gmail.com Adresine Otomatik E-Posta Gönderimi (FormSubmit AJAX)
+            try {
+                await fetch('https://formsubmit.co/ajax/aokty0@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(emailPayload)
                 });
-            } catch (err) {
-                // Hata olsa bile kullanıcıyı asla 404 sayfasına atmaz
-            }
+            } catch (err) {}
         }
 
         const quickDispatchForm = document.getElementById('quick-dispatch-form');
@@ -1441,7 +1512,9 @@
         const dispatchRefCode = document.getElementById('dispatch-ref-code');
         const dispatchRefInput = document.getElementById('dispatch-ref-input');
         const dispatchSummaryText = document.getElementById('dispatch-summary-text');
+        const dispatchMailtoLink = document.getElementById('dispatch-mailto-link');
         const dispatchWhatsappLink = document.getElementById('dispatch-whatsapp-link');
+        const dispatchSubmitText = document.getElementById('dispatch-submit-text');
 
         if (quickDispatchForm) {
             quickDispatchForm.addEventListener('submit', async (e) => {
@@ -1456,19 +1529,50 @@
                 const randomRef = 'OKT-' + Math.floor(1000 + Math.random() * 9000);
                 if (dispatchRefInput) dispatchRefInput.value = randomRef;
 
-                // 1. Netlify Forms'a Arka Planda Kaydet
-                await submitToNetlifyForms(quickDispatchForm);
+                if (dispatchSubmitText) {
+                    dispatchSubmitText.textContent = 'Gönderiliyor...';
+                }
 
-                // 2. Özet ve WhatsApp İş Emrini Hazırla
+                // 1. aokty0@gmail.com ve Netlify Forms'a Arka Planda Gönder
+                await submitFormToCloudAndEmail(quickDispatchForm, {
+                    _subject: `Oktay Forklift Hızlı Servis Talebi (#${randomRef}) - ${companyOrName}`,
+                    Referans_No: `#${randomRef}`,
+                    Firma_veya_Yetkili: companyOrName,
+                    Telefon: phone,
+                    Makina_Tipi: selectedMachineType,
+                    Marka_ve_Konum_Notu: brandNote,
+                    Ariza_Hizmet_Kategorisi: category,
+                    Aciliyet_Durumu: urgency
+                });
+
+                if (dispatchSubmitText) {
+                    dispatchSubmitText.textContent = 'Servis Talebini Gönder';
+                }
+
+                // 2. Özet, E-Posta (mailto) ve İsteğe Bağlı WhatsApp Bağlantılarını Hazırla
                 const summaryString = `Kayıt: #${randomRef} | Firma/Yetkili: ${companyOrName} | Makina: ${selectedMachineType} (${brandNote}) | Hizmet: ${category} | Durum: ${urgency} | Tel: ${phone}`;
 
                 dispatchRefCode.textContent = '#' + randomRef;
                 dispatchSummaryText.textContent = summaryString;
 
-                const waMessage = encodeURIComponent(
-                    `Merhaba Hüseyin Bey (Oktay Forklift Servisi),\n\nWeb sitenizden servis kaydı oluşturdum:\n• Kayıt No: #${randomRef}\n• Firma / Yetkili: ${companyOrName}\n• Makina Tipi: ${selectedMachineType}\n• Marka / Konum Notu: ${brandNote}\n• Talep / Arıza: ${category}\n• Aciliyet: ${urgency}\n• Telefon: ${phone}`
-                );
-                dispatchWhatsappLink.href = `https://wa.me/905339540425?text=${waMessage}`;
+                const plainBody =
+                    `Merhaba Hüseyin Bey (Oktay Forklift Servisi),\n\n` +
+                    `Web sitenizden servis iş emri oluşturdum:\n` +
+                    `• Kayıt No: #${randomRef}\n` +
+                    `• Firma / Yetkili: ${companyOrName}\n` +
+                    `• Makina Tipi: ${selectedMachineType}\n` +
+                    `• Marka / Konum Notu: ${brandNote}\n` +
+                    `• Talep / Arıza: ${category}\n` +
+                    `• Durum: ${urgency}\n` +
+                    `• Telefon: ${phone}`;
+
+                const mailSubject = encodeURIComponent(`Oktay Forklift Servis Talebi (#${randomRef}) - ${companyOrName}`);
+                const mailBody = encodeURIComponent(plainBody);
+                if (dispatchMailtoLink) {
+                    dispatchMailtoLink.href = `mailto:aokty0@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+                }
+
+                dispatchWhatsappLink.href = `https://wa.me/905339540425?text=${mailBody}`;
 
                 dispatchResultBox.classList.remove('hidden');
             });
@@ -1728,13 +1832,15 @@
         });
 
         /* -------------------------------------------------------------------
-           7. KURUMSAL İLETİŞİM FORMU (NETLIFY FORMS + WHATSAPP KÖPRÜSÜ)
+           7. KURUMSAL İLETİŞİM FORMU (aokty0@gmail.com E-POSTA + NETLIFY + İSTEĞE BAĞLI WHATSAPP)
         -------------------------------------------------------------------- */
         const corporateContactForm = document.getElementById('corporate-contact-form');
         const contactFormFeedback = document.getElementById('contact-form-feedback');
         const contactRefBadge = document.getElementById('contact-ref-badge');
         const contactRefInput = document.getElementById('contact-ref-input');
+        const contactMailtoBridge = document.getElementById('contact-mailto-bridge');
         const contactWaBridge = document.getElementById('contact-wa-bridge');
+        const corporateSubmitText = document.getElementById('corporate-submit-text');
 
         if (corporateContactForm) {
             corporateContactForm.addEventListener('submit', async (e) => {
@@ -1751,35 +1857,50 @@
 
                 if (contactRefInput) contactRefInput.value = refId;
 
-                // 1. Netlify Forms'a otomatik kaydet
-                await submitToNetlifyForms(corporateContactForm);
+                if (corporateSubmitText) {
+                    corporateSubmitText.textContent = 'Gönderiliyor...';
+                }
 
-                // 2. WhatsApp köprüsünü hazırla
+                // 1. aokty0@gmail.com ve Netlify Forms'a otomatik kaydet
+                await submitFormToCloudAndEmail(corporateContactForm, {
+                    _subject: `Oktay Forklift Kurumsal Teklif/Servis Talebi (#${refId}) - ${company}`,
+                    Referans_No: `#${refId}`,
+                    Yetkili_Adi_Soyadi: name,
+                    Firma_Adi: company,
+                    Telefon: phone,
+                    Musteri_Eposta: email,
+                    Talep_Edilen_Hizmet: service,
+                    Filodaki_Makina_Sayisi: fleetCount,
+                    Detay_ve_Notlar: details
+                });
+
+                if (corporateSubmitText) {
+                    corporateSubmitText.textContent = 'Teklif ve Servis Talebini Gönder';
+                }
+
+                // 2. E-Posta (mailto) ve İsteğe Bağlı WhatsApp köprüsünü hazırla
                 contactRefBadge.textContent = '#' + refId;
-                const messageBody = encodeURIComponent(
-                    `Merhaba Hüseyin Bey (Oktay Forklift Servisi),\n\nKurumsal Servis & Teklif Formu üzerinden talebimiz:\n• Referans No: #${refId}\n• Firma: ${company}\n• Yetkili: ${name}\n• Telefon: ${phone}\n• E-Posta: ${email}\n• Hizmet: ${service}\n• Makina Sayısı: ${fleetCount}\n• Detaylar: ${details}`
-                );
-                contactWaBridge.href = `https://wa.me/905339540425?text=${messageBody}`;
+                const plainTextMessage =
+                    `Merhaba Hüseyin Bey (Oktay Forklift Servisi),\n\n` +
+                    `Kurumsal Servis & Teklif Formu üzerinden talebimiz:\n` +
+                    `• Referans No: #${refId}\n` +
+                    `• Firma: ${company}\n` +
+                    `• Yetkili: ${name}\n` +
+                    `• Telefon: ${phone}\n` +
+                    `• E-Posta: ${email}\n` +
+                    `• Hizmet: ${service}\n` +
+                    `• Makina Sayısı: ${fleetCount}\n` +
+                    `• Detaylar: ${details}`;
+
+                const encodedSubject = encodeURIComponent(`Oktay Forklift Kurumsal Servis & Teklif Talebi (#${refId}) - ${company}`);
+                const encodedBody = encodeURIComponent(plainTextMessage);
+
+                if (contactMailtoBridge) {
+                    contactMailtoBridge.href = `mailto:aokty0@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+                }
+                contactWaBridge.href = `https://wa.me/905339540425?text=${encodedBody}`;
 
                 contactFormFeedback.classList.remove('hidden');
                 corporateContactForm.reset();
             });
         }
-
-        function copyTextToClipboard(text, targetElement) {
-            const tempInput = document.createElement('textarea');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            const originalText = targetElement.textContent;
-            targetElement.textContent = 'Kopyalandı!';
-            setTimeout(() => {
-                targetElement.textContent = originalText;
-            }, 2000);
-        }
-    </script>
-</body>
-</html>
