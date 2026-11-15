@@ -461,6 +461,7 @@
                             <input type="hidden" name="form-name" value="hizli-servis-talebi" />
                             <input type="hidden" id="dispatch-ref-input" name="referans_no" value="TOY-2026" />
                             <input type="hidden" id="dispatch-machine-input" name="forklift_tipi" value="Dizel Forklift" />
+                            <p class="hidden" aria-hidden="true"><label>Boş bırakın <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
                             <!-- 1. Makina Tipi Seçimi -->
                             <div>
@@ -585,6 +586,23 @@
                                         <a id="dispatch-tel-link" href="tel:+905339540425" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border theme-border theme-surface theme-text text-xs font-bold hover:opacity-80 transition-opacity">
                                             <span>Hemen Ara: 0533 954 04 25</span>
                                         </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dürüst Hata Bildirimi: Otomatik iletim başarısız olduğunda gösterilir -->
+                        <div id="dispatch-error-box" class="hidden px-6 pb-6 pt-2 border-t theme-border theme-surface">
+                            <div class="p-4 rounded-xl theme-card border border-red-600/60 shadow-sm">
+                                <div class="flex items-start gap-2.5">
+                                    <svg class="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.48 0L3.16 16.25A2 2 0 005 19z"></path></svg>
+                                    <div class="text-xs leading-relaxed">
+                                        <p class="font-bold text-red-600 mb-1">Talebiniz otomatik iletilemedi.</p>
+                                        <p class="theme-text-sec mb-3">Formunuzdaki bilgileriniz silinmedi. Lütfen doğrudan bize ulaşın — acil servis hattımız 7/24 açıktır:</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <a href="tel:+905339540425" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg theme-btn-primary text-xs font-bold">Ara: 0533 954 04 25</a>
+                                            <a href="https://wa.me/905339540425?text=Merhaba%2C%20forklift%20servis%20talebim%20var." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold">WhatsApp ile Yaz</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1202,6 +1220,7 @@
                         <form id="corporate-contact-form" name="iletisim-teklif-formu" method="POST" data-netlify="true" class="space-y-4">
                             <input type="hidden" name="form-name" value="iletisim-teklif-formu" />
                             <input type="hidden" id="contact-ref-input" name="referans_no" value="TOY-2026" />
+                            <p class="hidden" aria-hidden="true"><label>Boş bırakın <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
@@ -1283,6 +1302,21 @@
                                     <a href="tel:+905339540425" class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border theme-border theme-card theme-text font-bold text-xs hover:opacity-80 transition-all">
                                         <span>Hemen Ara: 0533 954 04 25</span>
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dürüst Hata Bildirimi: Otomatik iletim başarısız olduğunda gösterilir -->
+                        <div id="contact-error-box" class="hidden mt-5 p-5 rounded-xl theme-surface border border-red-600/60">
+                            <div class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.48 0L3.16 16.25A2 2 0 005 19z"></path></svg>
+                                <div class="text-xs leading-relaxed">
+                                    <p class="font-bold text-red-600 mb-1">Talebiniz otomatik iletilemedi.</p>
+                                    <p class="theme-text-sec mb-3">Formunuzdaki bilgileriniz silinmedi. Lütfen doğrudan bize ulaşın — acil servis hattımız 7/24 açıktır:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <a href="tel:+905339540425" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg theme-btn-primary text-xs font-bold">Ara: 0533 954 04 25</a>
+                                        <a href="https://wa.me/905339540425?text=Merhaba%2C%20forklift%20servis%20talebim%20var." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold">WhatsApp ile Yaz</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1433,6 +1467,49 @@
         syncThemeUI();
 
         /* -------------------------------------------------------------------
+           1b. PANO KOPYALAMA (navigator.clipboard + execCommand fallback)
+        -------------------------------------------------------------------- */
+        async function copyTextToClipboard(text, buttonElement) {
+            let copied = false;
+            // 1. Öncelikli yol: Clipboard API (https / localhost gerektirir)
+            if (navigator.clipboard && window.isSecureContext) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    copied = true;
+                } catch (err) {
+                    copied = false;
+                }
+            }
+            // 2. Yedek yol: gizli textarea + document.execCommand('copy') (http dahil çalışır)
+            if (!copied) {
+                try {
+                    const tempTextarea = document.createElement('textarea');
+                    tempTextarea.value = text;
+                    tempTextarea.setAttribute('readonly', '');
+                    tempTextarea.style.position = 'fixed';
+                    tempTextarea.style.left = '-9999px';
+                    document.body.appendChild(tempTextarea);
+                    tempTextarea.select();
+                    copied = document.execCommand('copy');
+                    document.body.removeChild(tempTextarea);
+                } catch (err) {
+                    copied = false;
+                }
+            }
+
+            if (buttonElement) {
+                const originalHtml = buttonElement.getAttribute('data-original') || buttonElement.innerHTML;
+                buttonElement.setAttribute('data-original', originalHtml);
+                buttonElement.innerHTML = copied ? 'Kopyalandı ✓' : 'Kopyalanamadı';
+                buttonElement.disabled = true;
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalHtml;
+                    buttonElement.disabled = false;
+                }, 1500);
+            }
+        }
+
+        /* -------------------------------------------------------------------
            2. MOBİL ÇEKMECE MENÜ KONTROLÜ
         -------------------------------------------------------------------- */
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -1485,8 +1562,9 @@
         });
 
         // Sayfayı Asla 404'e Yönlendirmeyen Çift Kanallı (aokty0@gmail.com + Netlify) Kayıt Fonksiyonu
+        // DÖNÜŞ DEĞERİ: true = e-posta GERÇEKTEN iletildi, false = iletilmedi (arayüz buna göre dürüst mesaj gösterir)
         async function submitFormToCloudAndEmail(formElement, emailPayload) {
-            // 1. Netlify Forms Arka Plan Kaydı
+            // 1. Netlify Forms Arka Plan Kaydı (yardımcı kanal; başarısı zorunlu değil)
             try {
                 const formData = new FormData(formElement);
                 const encodedBody = new URLSearchParams(formData).toString();
@@ -1498,25 +1576,62 @@
             } catch (err) {}
 
             // 2. Doğrudan aokty0@gmail.com Adresine Otomatik E-Posta Gönderimi (FormSubmit AJAX)
+            // NOT: FormSubmit.co ilk kullanımda e-posta ile aktivasyon ister;
+            // aokty0@gmail.com gelen kutusundaki aktivasyon bağlantısı onaylanmazsa talepler ulaşmaz.
+            const submitPayload = Object.assign({}, emailPayload, {
+                _captcha: 'false',
+                _template: 'table',
+                // Honeypot: gerçek kullanıcılarda boş kalır; bot doldurursa FormSubmit talebi saymaz
+                _honey: (formElement && formElement.querySelector('[name="bot-field"]') ? formElement.querySelector('[name="bot-field"]').value : '')
+            });
+
             try {
-                await fetch('https://formsubmit.co/ajax/aokty0@gmail.com', {
+                const res = await fetch('https://formsubmit.co/ajax/aokty0@gmail.com', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify(emailPayload)
+                    body: JSON.stringify(submitPayload)
                 });
-            } catch (err) {}
+
+                if (!res.ok) {
+                    return false; // HTTP hatası: talep iletilmedi
+                }
+                let data = null;
+                try {
+                    data = await res.json();
+                } catch (parseErr) {
+                    // Yanıt JSON değilse güvenli tarafa geç: iletilmedi say
+                    return false;
+                }
+                // FormSubmit başarılı yanıtta {"success": "true", ...} döner
+                return data && (data.success === true || data.success === 'true');
+            } catch (err) {
+                return false; // ağ hatası: talep iletilmedi
+            }
+        }
+
+        // Form gönderim butonunu kilitler/açar (çift gönderimi engeller)
+        function setFormSubmitting(submitBtn, textSpan, isBusy, idleText, busyText) {
+            if (!submitBtn) return;
+            submitBtn.disabled = isBusy;
+            submitBtn.classList.toggle('opacity-60', isBusy);
+            submitBtn.classList.toggle('cursor-not-allowed', isBusy);
+            if (textSpan) {
+                textSpan.textContent = isBusy ? busyText : idleText;
+            }
         }
 
         const quickDispatchForm = document.getElementById('quick-dispatch-form');
         const dispatchResultBox = document.getElementById('dispatch-result-box');
+        const dispatchErrorBox = document.getElementById('dispatch-error-box');
         const dispatchRefCode = document.getElementById('dispatch-ref-code');
         const dispatchRefInput = document.getElementById('dispatch-ref-input');
         const dispatchSummaryText = document.getElementById('dispatch-summary-text');
         const dispatchMailtoLink = document.getElementById('dispatch-mailto-link');
         const dispatchWhatsappLink = document.getElementById('dispatch-whatsapp-link');
+        const dispatchSubmitBtn = document.getElementById('dispatch-submit-btn');
         const dispatchSubmitText = document.getElementById('dispatch-submit-text');
 
         if (quickDispatchForm) {
@@ -1532,12 +1647,13 @@
                 const randomRef = 'TOY-' + Math.floor(1000 + Math.random() * 9000);
                 if (dispatchRefInput) dispatchRefInput.value = randomRef;
 
-                if (dispatchSubmitText) {
-                    dispatchSubmitText.textContent = 'Gönderiliyor...';
-                }
+                // Butonu kilitle (çift gönderimi engelle)
+                setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, true, 'Servis Talebini Gönder', 'Gönderiliyor...');
+                if (dispatchErrorBox) dispatchErrorBox.classList.add('hidden');
+                if (dispatchResultBox) dispatchResultBox.classList.add('hidden');
 
                 // 1. aokty0@gmail.com ve Netlify Forms'a Arka Planda Gönder
-                await submitFormToCloudAndEmail(quickDispatchForm, {
+                const emailDelivered = await submitFormToCloudAndEmail(quickDispatchForm, {
                     _subject: `Toyo Forklift Servis Hızlı Servis Talebi (#${randomRef}) - ${companyOrName}`,
                     Referans_No: `#${randomRef}`,
                     Firma_veya_Yetkili: companyOrName,
@@ -1548,9 +1664,8 @@
                     Aciliyet_Durumu: urgency
                 });
 
-                if (dispatchSubmitText) {
-                    dispatchSubmitText.textContent = 'Servis Talebini Gönder';
-                }
+                // Buton kilidini aç
+                setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, false, 'Servis Talebini Gönder', 'Gönderiliyor...');
 
                 // 2. Özet, E-Posta (mailto) ve İsteğe Bağlı WhatsApp Bağlantılarını Hazırla
                 const summaryString = `Kayıt: #${randomRef} | Firma/Yetkili: ${companyOrName} | Makina: ${selectedMachineType} (${brandNote}) | Hizmet: ${category} | Durum: ${urgency} | Tel: ${phone}`;
@@ -1577,7 +1692,18 @@
 
                 dispatchWhatsappLink.href = `https://wa.me/905339540425?text=${mailBody}`;
 
-                dispatchResultBox.classList.remove('hidden');
+                if (emailDelivered) {
+                    // GERÇEK başarı: FormSubmit "success" döndü
+                    dispatchResultBox.classList.remove('hidden');
+                } else {
+                    // DÜRÜST hata bildirimi: otomatik iletim başarısız; form verisi korunur, alanlar dolu kalır
+                    if (dispatchErrorBox) {
+                        dispatchErrorBox.classList.remove('hidden');
+                        dispatchErrorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        alert('Talebiniz otomatik iletilemedi. Lütfen arayın: 0533 954 04 25 veya WhatsApp üzerinden yazın.');
+                    }
+                }
             });
         }
 
@@ -1839,10 +1965,12 @@
         -------------------------------------------------------------------- */
         const corporateContactForm = document.getElementById('corporate-contact-form');
         const contactFormFeedback = document.getElementById('contact-form-feedback');
+        const contactErrorBox = document.getElementById('contact-error-box');
         const contactRefBadge = document.getElementById('contact-ref-badge');
         const contactRefInput = document.getElementById('contact-ref-input');
         const contactMailtoBridge = document.getElementById('contact-mailto-bridge');
         const contactWaBridge = document.getElementById('contact-wa-bridge');
+        const corporateSubmitBtn = document.getElementById('corporate-submit-btn');
         const corporateSubmitText = document.getElementById('corporate-submit-text');
 
         if (corporateContactForm) {
@@ -1860,12 +1988,13 @@
 
                 if (contactRefInput) contactRefInput.value = refId;
 
-                if (corporateSubmitText) {
-                    corporateSubmitText.textContent = 'Gönderiliyor...';
-                }
+                // Butonu kilitle (çift gönderimi engelle)
+                setFormSubmitting(corporateSubmitBtn, corporateSubmitText, true, 'Teklif ve Servis Talebini Gönder', 'Gönderiliyor...');
+                contactFormFeedback.classList.add('hidden');
+                if (contactErrorBox) contactErrorBox.classList.add('hidden');
 
                 // 1. aokty0@gmail.com ve Netlify Forms'a otomatik kaydet
-                await submitFormToCloudAndEmail(corporateContactForm, {
+                const emailDelivered = await submitFormToCloudAndEmail(corporateContactForm, {
                     _subject: `Toyo Forklift Servis Kurumsal Teklif/Servis Talebi (#${refId}) - ${company}`,
                     Referans_No: `#${refId}`,
                     Yetkili_Adi_Soyadi: name,
@@ -1877,9 +2006,8 @@
                     Detay_ve_Notlar: details
                 });
 
-                if (corporateSubmitText) {
-                    corporateSubmitText.textContent = 'Teklif ve Servis Talebini Gönder';
-                }
+                // Buton kilidini aç
+                setFormSubmitting(corporateSubmitBtn, corporateSubmitText, false, 'Teklif ve Servis Talebini Gönder', 'Gönderiliyor...');
 
                 // 2. E-Posta (mailto) ve İsteğe Bağlı WhatsApp köprüsünü hazırla
                 contactRefBadge.textContent = '#' + refId;
@@ -1903,7 +2031,21 @@
                 }
                 contactWaBridge.href = `https://wa.me/905339540425?text=${encodedBody}`;
 
-                contactFormFeedback.classList.remove('hidden');
-                corporateContactForm.reset();
+                if (emailDelivered) {
+                    // GERÇEK başarı: FormSubmit "success" döndü
+                    contactFormFeedback.classList.remove('hidden');
+                    contactErrorBox.classList.add('hidden');
+                } else {
+                    // DÜRÜST hata bildirimi: otomatik iletim başarısız; form verisi korunur, alanlar dolu kalır
+                    if (contactErrorBox) {
+                        contactErrorBox.classList.remove('hidden');
+                        contactErrorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        alert('Talebiniz otomatik iletilemedi. Lütfen arayın: 0533 954 04 25 veya WhatsApp üzerinden yazın.');
+                    }
+                }
             });
         }
+    </script>
+</body>
+</html>
