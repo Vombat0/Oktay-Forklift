@@ -13,10 +13,14 @@
     <!-- TODO: yayın alan adı gelince canonical adresi güncelleyin -->
     <link rel="canonical" href="https://ornek-alan-adi.com/garanti.html">
 
+    <!-- B1: CDN yerine yerel derlenmis Tailwind CSS (npm run build:css ile uretilir;
+         FOUC olmamasi icin head icinde erken yuklenir) -->
+    <link rel="stylesheet" href="assets/styles.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
     <!-- Tema flaşını önleyen erken script (index.html ile aynı localStorage anahtarı: toyo_theme) -->
     <script>
@@ -32,139 +36,6 @@
         })();
     </script>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                        brand: ['Montserrat', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    }
-                }
-            }
-        };
-    </script>
-
-    <!-- Ana site ile aynı tema değişkenleri (sadeleştirilmiş) -->
-    <style>
-        :root {
-            --bg-body: #F5F6F7;
-            --bg-surface: #ECEEF0;
-            --bg-card: #ffffff;
-            --bg-elevated: #F7F8F9;
-            --text-primary: #15181B;
-            --text-secondary: #4C5257;
-            --text-muted: #71787E;
-            --border-color: #DCDFE2;
-            --border-strong: #BFC4C9;
-            --brand-primary: #C8102E;
-            --brand-primary-hover: #A00D25;
-            --brand-primary-text: #ffffff;
-            --brand-accent: #C8102E;
-            --logo-gear: #C8102E;
-            --logo-cutout: #ffffff;
-            --logo-forklift: #9BA1A6;
-            --logo-roof: #C8102E;
-            --header-bg: rgba(255, 255, 255, 0.95);
-            --card-shadow: 0 12px 32px -8px rgba(21, 24, 27, 0.10), 0 4px 12px -2px rgba(21, 24, 27, 0.05);
-        }
-
-        html.dark {
-            --bg-body: #0F1114;
-            --bg-surface: #171A1E;
-            --bg-card: #1B1F23;
-            --bg-elevated: #22272B;
-            --text-primary: #EDEFF1;
-            --text-secondary: #BFC4C9;
-            --text-muted: #8A9197;
-            --border-color: #2E3439;
-            --border-strong: #434A50;
-            --brand-primary: #FF4D5E;
-            --brand-primary-hover: #FF7A87;
-            --brand-primary-text: #0F1114;
-            --brand-accent: #D8DCE0;
-            --logo-gear: #FF4D5E;
-            --logo-cutout: #1B1F23;
-            --logo-forklift: #D8DCE0;
-            --logo-roof: #FF4D5E;
-            --header-bg: rgba(15, 17, 20, 0.95);
-            --card-shadow: 0 14px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(67, 74, 80, 0.7);
-        }
-
-        body {
-            background-color: var(--bg-body) !important;
-            color: var(--text-primary) !important;
-            transition: background-color 0.25s ease, color 0.25s ease;
-        }
-
-        .theme-body { background-color: var(--bg-body) !important; color: var(--text-primary) !important; }
-        .theme-surface { background-color: var(--bg-surface) !important; color: var(--text-primary) !important; }
-        .theme-card { background-color: var(--bg-card) !important; color: var(--text-primary) !important; border-color: var(--border-color) !important; }
-        .theme-text { color: var(--text-primary) !important; }
-        .theme-text-sec { color: var(--text-secondary) !important; }
-        .theme-muted { color: var(--text-muted) !important; }
-        .theme-border { border-color: var(--border-color) !important; }
-        .theme-accent-text { color: var(--brand-accent) !important; }
-        .theme-shadow { box-shadow: var(--card-shadow) !important; }
-
-        .theme-btn-primary {
-            background-color: var(--brand-primary) !important;
-            color: var(--brand-primary-text) !important;
-            transition: all 0.2s ease;
-        }
-        .theme-btn-primary:hover {
-            background-color: var(--brand-primary-hover) !important;
-        }
-
-        .svg-gear { fill: var(--logo-gear); transition: fill 0.25s ease; }
-        .svg-cutout { fill: var(--logo-cutout); transition: fill 0.25s ease; }
-        .svg-forklift { fill: var(--logo-forklift); transition: fill 0.25s ease; }
-        .svg-forklift-stroke { stroke: var(--logo-forklift); transition: stroke 0.25s ease; }
-        .svg-roof { fill: var(--logo-roof); transition: fill 0.25s ease; }
-
-        .enterprise-header {
-            background-color: var(--header-bg) !important;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-        }
-
-        :focus-visible {
-            outline: 2px solid var(--brand-accent);
-            outline-offset: 2px;
-        }
-        a:focus-visible, button:focus-visible {
-            outline: 2px solid var(--brand-accent);
-            outline-offset: 2px;
-        }
-
-        /* Doldurulacak Yer Tutucular (TODO içerikleri) */
-        .todo-placeholder {
-            display: inline-block;
-            font-size: 0.68rem;
-            font-family: 'JetBrains Mono', monospace;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            background: rgba(234, 179, 8, 0.10);
-            border-bottom: 2px dashed var(--border-strong);
-            padding: 1px 6px;
-            border-radius: 4px;
-        }
-        html.dark .todo-placeholder {
-            background: rgba(234, 179, 8, 0.12);
-            color: var(--text-secondary);
-        }
-
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-body); }
-        ::-webkit-scrollbar-thumb { background: #9BA1A6; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
-    </style>
 </head>
 <body class="theme-body font-sans antialiased">
 
