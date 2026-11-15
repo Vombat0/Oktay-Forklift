@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garanti Koşulları | Toyo Forklift Servis</title>
+    <meta name="description" content="Toyo Forklift Servis garanti koşulları: işçilik ve yedek parça garantisi kapsamı, süresi, kapsam dışı durumlar, garanti başvuru yöntemi ve yasal haklarınız.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon: ana site ile aynı data-URI SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C8102E'/%3E%3Ctext x='32' y='47' font-family='Arial, Helvetica, sans-serif' font-size='42' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+
+    <!-- TODO: yayın alan adı gelince canonical adresi güncelleyin -->
+    <link rel="canonical" href="https://ornek-alan-adi.com/garanti.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tema flaşını önleyen erken script (index.html ile aynı localStorage anahtarı: toyo_theme) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('toyo_theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        brand: ['Montserrat', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Ana site ile aynı tema değişkenleri (sadeleştirilmiş) -->
+    <style>
+        :root {
+            --bg-body: #F5F6F7;
+            --bg-surface: #ECEEF0;
+            --bg-card: #ffffff;
+            --bg-elevated: #F7F8F9;
+            --text-primary: #15181B;
+            --text-secondary: #4C5257;
+            --text-muted: #71787E;
+            --border-color: #DCDFE2;
+            --border-strong: #BFC4C9;
+            --brand-primary: #C8102E;
+            --brand-primary-hover: #A00D25;
+            --brand-primary-text: #ffffff;
+            --brand-accent: #C8102E;
+            --logo-gear: #C8102E;
+            --logo-cutout: #ffffff;
+            --logo-forklift: #9BA1A6;
+            --logo-roof: #C8102E;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --card-shadow: 0 12px 32px -8px rgba(21, 24, 27, 0.10), 0 4px 12px -2px rgba(21, 24, 27, 0.05);
+        }
+
+        html.dark {
+            --bg-body: #0F1114;
+            --bg-surface: #171A1E;
+            --bg-card: #1B1F23;
+            --bg-elevated: #22272B;
+            --text-primary: #EDEFF1;
+            --text-secondary: #BFC4C9;
+            --text-muted: #8A9197;
+            --border-color: #2E3439;
+            --border-strong: #434A50;
+            --brand-primary: #FF4D5E;
+            --brand-primary-hover: #FF7A87;
+            --brand-primary-text: #0F1114;
+            --brand-accent: #D8DCE0;
+            --logo-gear: #FF4D5E;
+            --logo-cutout: #1B1F23;
+            --logo-forklift: #D8DCE0;
+            --logo-roof: #FF4D5E;
+            --header-bg: rgba(15, 17, 20, 0.95);
+            --card-shadow: 0 14px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(67, 74, 80, 0.7);
+        }
+
+        body {
+            background-color: var(--bg-body) !important;
+            color: var(--text-primary) !important;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .theme-body { background-color: var(--bg-body) !important; color: var(--text-primary) !important; }
+        .theme-surface { background-color: var(--bg-surface) !important; color: var(--text-primary) !important; }
+        .theme-card { background-color: var(--bg-card) !important; color: var(--text-primary) !important; border-color: var(--border-color) !important; }
+        .theme-text { color: var(--text-primary) !important; }
+        .theme-text-sec { color: var(--text-secondary) !important; }
+        .theme-muted { color: var(--text-muted) !important; }
+        .theme-border { border-color: var(--border-color) !important; }
+        .theme-accent-text { color: var(--brand-accent) !important; }
+        .theme-shadow { box-shadow: var(--card-shadow) !important; }
+
+        .theme-btn-primary {
+            background-color: var(--brand-primary) !important;
+            color: var(--brand-primary-text) !important;
+            transition: all 0.2s ease;
+        }
+        .theme-btn-primary:hover {
+            background-color: var(--brand-primary-hover) !important;
+        }
+
+        .svg-gear { fill: var(--logo-gear); transition: fill 0.25s ease; }
+        .svg-cutout { fill: var(--logo-cutout); transition: fill 0.25s ease; }
+        .svg-forklift { fill: var(--logo-forklift); transition: fill 0.25s ease; }
+        .svg-forklift-stroke { stroke: var(--logo-forklift); transition: stroke 0.25s ease; }
+        .svg-roof { fill: var(--logo-roof); transition: fill 0.25s ease; }
+
+        .enterprise-header {
+            background-color: var(--header-bg) !important;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--brand-accent);
+            outline-offset: 2px;
+        }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--brand-accent);
+            outline-offset: 2px;
+        }
+
+        /* Doldurulacak Yer Tutucular (TODO içerikleri) */
+        .todo-placeholder {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            background: rgba(234, 179, 8, 0.10);
+            border-bottom: 2px dashed var(--border-strong);
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        html.dark .todo-placeholder {
+            background: rgba(234, 179, 8, 0.12);
+            color: var(--text-secondary);
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { background: #9BA1A6; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
+    </style>
+</head>
+<body class="theme-body font-sans antialiased">
+
+    <!-- ÜST BAR: logo + ana sayfaya dönüş + tema butonu -->
+    <header class="sticky top-0 z-50 enterprise-header border-b theme-border">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-20 gap-4">
+                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="Toyo Forklift Servis Anasayfa">
+                    <div class="w-12 h-12 flex items-center justify-center shrink-0" style="width: 48px; height: 48px;">
+                        <svg viewBox="0 0 200 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path class="svg-gear" d="M84 10 H116 L122 27 A74 74 0 0 1 139 34 L155 22 L178 45 L166 61 A74 74 0 0 1 173 78 L190 84 V116 L173 122 A74 74 0 0 1 166 139 L178 155 L155 178 L139 166 A74 74 0 0 1 122 173 L116 190 H84 L78 173 A74 74 0 0 1 61 166 L45 178 L22 155 L34 139 A74 74 0 0 1 27 122 L10 116 V84 L27 78 A74 74 0 0 1 34 61 L22 45 L45 22 L61 34 A74 74 0 0 1 78 27 Z" />
+                            <circle cx="100" cy="100" r="58" class="svg-cutout" />
+                            <polygon points="18,93 66,93 66,112 28,112" class="svg-cutout" />
+                            <rect x="86" y="23" width="24" height="35" rx="2" class="svg-cutout" />
+                            <path d="M98 112 L117 64 C119 59 123 57 130 57 H152 V65 H130 C126 65 124 67 122 71 L105 112 Z" class="svg-roof" />
+                            <polygon points="24,102 68,97 68,103 28,106" class="svg-forklift" />
+                            <polygon points="34,109 68,106 68,110 38,112" class="svg-forklift" />
+                            <rect x="65" y="72" width="6" height="38" rx="1" class="svg-forklift" />
+                            <rect x="68" y="88" width="9" height="7" class="svg-forklift" />
+                            <rect x="75" y="42" width="9" height="96" rx="1" class="svg-forklift" />
+                            <rect x="89" y="28" width="12" height="110" rx="1" class="svg-forklift" />
+                            <path d="M107 110 L117 91" class="svg-forklift-stroke" stroke-width="5.5" stroke-linecap="round" />
+                            <path d="M111 87 L123 94" class="svg-forklift-stroke" stroke-width="4.5" stroke-linecap="round" />
+                            <path d="M137 86 H144 V106 H133 Z" class="svg-forklift" />
+                            <path d="M89 116 L104 106 L124 112 L127 104 H153 C152 126 142 142 126 147 H122 A19 19 0 0 0 86 138 H75 V116 Z" class="svg-forklift" />
+                            <circle cx="105" cy="141" r="18" class="svg-cutout" />
+                            <circle cx="105" cy="141" r="13.5" class="svg-forklift" />
+                            <circle cx="105" cy="141" r="6.5" class="svg-cutout" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center whitespace-nowrap">
+                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">TOYO</span>
+                        <span class="font-brand font-bold text-[10px] tracking-[0.22em] theme-muted uppercase mt-1 leading-none">FORKLIFT SERVİS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2.5 shrink-0">
+                    <a href="index.html" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg border theme-border theme-surface theme-text text-xs font-bold hover:opacity-90 transition-all whitespace-nowrap">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        <span>Ana sayfaya dön</span>
+                    </a>
+                    <button type="button" onclick="toggleSiteTheme()" data-theme-toggle aria-pressed="false" aria-label="Koyu temaya geç" title="Gece / Gündüz Modunu Değiştir" class="p-2.5 rounded-lg border theme-border theme-surface theme-text hover:opacity-80 transition-all cursor-pointer shrink-0">
+                        <svg class="theme-icon-moon-el w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg class="theme-icon-sun-el w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+
+        <!-- Taslak uyarı kutusu -->
+        <div class="mb-8 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
+            <p class="text-sm font-bold text-amber-600 dark:text-amber-400 flex items-center gap-2">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.48 0L3.16 16.25A2 2 0 005 19z"></path></svg>
+                Bu metin taslaktır; yayına almadan önce hukuk danışmanına inceletin.
+            </p>
+        </div>
+
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl theme-text tracking-tight mb-3">
+            Garanti Koşulları
+        </h1>
+        <p class="text-sm theme-text-sec leading-relaxed mb-10">
+            Toyo Forklift Servis olarak verdiğimiz işçilik ve yedek parça garantisinin kapsamı, süresi ve koşulları aşağıda açıklanmıştır. Her servisin ardından düzenlenen iş emrinde yer alan garanti bilgileri esas alır. Toyo Forklift Servis bağımsız bir özel servis işletmesidir; bu garanti üreticinin verdiği garantinin yerine geçmez.
+        </p>
+
+        <div class="space-y-8">
+
+            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">1. Garanti Kapsamı — İşçilik</h2>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">
+                    Tarafımızca gerçekleştirilen motor, şanzıman, hidrolik, akü ve elektronik kart onarım ve revizyonları; işlemin doğru ve mevzuata/teknik kurallara uygun yapılmamış olmasından kaynaklanan arızalara karşı garanti kapsamındadır. Garanti süresi: <span class="todo-placeholder">[GARANTİ SÜRESİ]</span> (iş emrinde yazılı süre esas alır).
+                </p>
+                <p class="text-sm theme-text-sec leading-relaxed">
+                    Garanti kapsamındaki başvurularda işçilik ve onarım sırasında kullanılan malzeme için ayrıca ücret talep edilmez. Garanti süresi, servis edilen makinanın size teslim edildiği tarihten itibaren başlar; iş emrinde farklı bir tarih belirtilmişse o tarih esas alınır.
+                </p>
+            </section>
+
+            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">2. Garanti Kapsamı — Yedek Parça</h2>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">
+                    Tarafımızca tedarik edilip takılan orijinal veya OEM yedek parçalar, üretici/tedarikçi firma garantisinin sağladığı haklar saklı kalmak kaydıyla, malzeme ve üretim hatalarına karşı garanti kapsamındadır. Parça bazında garanti süresi fatura/iş emrinde belirtilir; belirtilmemişse <span class="todo-placeholder">[PARÇA GARANTİ SÜRESİ]</span>.
+                </p>
+                <p class="text-sm theme-text-sec leading-relaxed">
+                    Garanti süresi içinde arızalanan parça, incelemeyi takiben ücretsiz olarak onarılır veya misli ile değiştirilir. Eşdeğer parça bulunamaması hâlinde taraflar karşılıklı mutabakatla çözüm belirler.
+                </p>
+            </section>
+
+            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">3. Garanti Kapsamı Dışındaki Durumlar</h2>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">Aşağıdaki hâller garanti kapsamı dışındadır:</p>
+                <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
+                    <li><strong class="theme-text">Yanlış kullanım:</strong> makinanın teknik özelliklerine ve kullanım kılavuzuna aykırı kullanım (kaldırma kapasitesinin üzerinde yükleme, uygun olmayan zemin/sıcaklık şartlarında çalıştırma vb.)</li>
+                    <li><strong class="theme-text">Aşırı yük ve zorlama:</strong> kapasite aşımı, darbe, devrilme, çarpma ve benzeri mekanik zorlanmalar</li>
+                    <li><strong class="theme-text">Yetkisiz müdahale:</strong> tarafımızdan verilmiş bir onay olmadan müşteri veya üçüncü kişilerce yapılan sökme, tamir, modifikasyon, yazılım/parametre değişikliği ve kaynaksız işlemler</li>
+                    <li><strong class="theme-text">Sarf malzemeleri:</strong> filtre, yağ, fren balatası, kavrama diskleri, lastik, sürtünme balatası, ampul, sigorta gibi tüketim/normal değişim parçaları (üretim hatası hariç)</li>
+                    <li><strong class="theme-text">Normal aşınma:</strong> zamanla oluşacak olağan aşınma, yıpranma ve performans düşüşleri</li>
+                    <li><strong class="theme-text">Dış etkenler:</strong> hatalı yakıt/kaynak elektriği, su baskını, yıldırım, yangın, kaza ve benzeri mücbir sebepler</li>
+                    <li><strong class="theme-text">Önerilen bakımın yapılmaması:</strong> periyodik bakımı aksatılmış makinada bu aksatmayla nedensellik bağı olan arızalar</li>
+                </ul>
+            </section>
+
+            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">4. Garanti Başvuru Yöntemi</h2>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">Garanti başvurularınızı şu kanallardan iletebilirsiniz:</p>
+                <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
+                    <li>Telefon / WhatsApp: <a href="tel:+905339540425" class="underline theme-accent-text">0533 954 04 25</a></li>
+                    <li>E-posta: <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a></li>
+                    <li>Web sitesi servis talep formu: <a href="index.html#ariza-ve-servis-paneli" class="underline theme-accent-text">Hızlı Arıza &amp; Servis İş Emri Paneli</a></li>
+                </ul>
+                <p class="text-sm theme-text-sec leading-relaxed mt-3">
+                    Başvuruda iş emri/talep referans numarası, makina marka-model ve arıza belirtisini paylaşmanız incelemeyi hızlandırır. Başvurunuz en kısa sürede değerlendirilir; gerekirse makinaya yerinde veya atölyede ücretsiz ön inceleme yapılır.
+                </p>
+            </section>
+
+            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">5. Yasal Haklar Saklıdır</h2>
+                <p class="text-sm theme-text-sec leading-relaxed">
+                    Bu sayfadaki garanti, <strong class="theme-text">6502 sayılı Tüketicinin Korunması Hakkında Kanun</strong> ve ilgili mevzuattan doğan zorunlu ayıp sorumluluğu ve garanti haklarınızı daraltmaz; bu haklarınız saklıdır. Tüketici işlemlerinde kanuni garanti haklarınız için ilgili mevzuat hükümleri uygulanır. Uyuşmazlıklarda yasal başvuru yollarınız saklıdır.
+                </p>
+            </section>
+
+        </div>
+
+        <div class="mt-10 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
+            <p class="text-sm font-bold text-amber-600 dark:text-amber-400">
+                Önemli: Bu metin taslak niteliğindedir; garanti süreleri ve kapsamı yayına alınmadan önce mutlaka bir hukuk danışmanına incelettirilmelidir.
+            </p>
+        </div>
+
+        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 16.11.2026</p>
+    </main>
+
+    <!-- Sade footer -->
+    <footer class="bg-[#C8102E] text-zinc-300 border-t border-white/10 mt-6">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            <p>&copy; 2026 Toyo Forklift Servis. Tüm Hakları Saklıdır.</p>
+            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1" aria-label="Yasal bağlantılar">
+                <a href="kvkk.html" class="underline hover:text-white">KVKK</a>
+                <a href="hakkinda.html" class="underline hover:text-white">Hakkımızda &amp; Yasal Bildirimler</a>
+                <a href="index.html" class="underline hover:text-white">Anasayfa</a>
+            </nav>
+        </div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-6">
+            <p class="text-xs text-zinc-300/90 leading-relaxed">
+                Toyo Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /* Tema sistemi: index.html ile aynı davranış ve aynı localStorage anahtarı (toyo_theme) */
+        function syncThemeUI() {
+            const isDark = document.documentElement.classList.contains('dark');
+            document.querySelectorAll('.theme-icon-moon-el').forEach(el => {
+                el.classList.toggle('hidden', isDark);
+            });
+            document.querySelectorAll('.theme-icon-sun-el').forEach(el => {
+                el.classList.toggle('hidden', !isDark);
+                el.classList.toggle('inline-flex', isDark);
+            });
+            document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+                btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+                btn.setAttribute('aria-label', isDark ? 'Açık temaya geç' : 'Koyu temaya geç');
+            });
+        }
+
+        function toggleSiteTheme() {
+            const htmlEl = document.documentElement;
+            const willBeDark = !htmlEl.classList.contains('dark');
+            if (willBeDark) {
+                htmlEl.classList.add('dark');
+                try { localStorage.setItem('toyo_theme', 'dark'); } catch (e) {}
+            } else {
+                htmlEl.classList.remove('dark');
+                try { localStorage.setItem('toyo_theme', 'light'); } catch (e) {}
+            }
+            syncThemeUI();
+        }
+
+        syncThemeUI();
+    </script>
+</body>
+</html>

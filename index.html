@@ -47,6 +47,7 @@
       "alternateName": "TOYO FORKLIFT SERVİS",
       "serviceType": "Forklift Bakım, Onarım ve Yedek Parça Servisi",
       "description": "Dizel, akülü ve LPG'li forkliftler için 7/24 yerinde mobil arıza tespiti, periyodik bakım, motor-şanzıman revizyonu ve garantili yedek parça servisi.",
+      "disambiguatingDescription": "Toyo Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.",
       "telephone": "+905339540425",
       "email": "aokty0@gmail.com",
       "priceRange": "₺₺",
@@ -283,23 +284,42 @@
     <!-- =====================================================================
          TODO: GA4 Measurement ID girin; girilene kadar bu blok pasif
          G-XXXXXXXXXX placeholder kaldığı sürece hiçbir istek atılmaz.
+         Gerçek ID girildiğinde GA4, çerez bildirim çubuğunda (sayfa sonunda)
+         "Kabul Et" denen ziyaretçide yüklenir; tercih localStorage
+         `toyo_cookie_ok` anahtarında tutulur. Ziyaretçi reddederse yüklenmez.
     ====================================================================== -->
     <script>
         (function() {
             var GA4_ID = 'G-XXXXXXXXXX';
             var isPlaceholder = !GA4_ID || GA4_ID === 'G-XXXXXXXXXX';
+            window.TOYO_GA4_PLACEHOLDER = isPlaceholder; // çerez bildirim çubuğu bunu okur
             if (isPlaceholder) return; // ID girilene kadar tamamen pasif
 
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
-            document.head.appendChild(s);
+            function loadGA4() {
+                if (window.__TOYO_GA4_LOADED) return;
+                window.__TOYO_GA4_LOADED = true;
 
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { window.dataLayer.push(arguments); }
-            window.gtag = window.gtag || gtag;
-            window.gtag('js', new Date());
-            window.gtag('config', GA4_ID);
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+                document.head.appendChild(s);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { window.dataLayer.push(arguments); }
+                window.gtag = window.gtag || gtag;
+                window.gtag('js', new Date());
+                window.gtag('config', GA4_ID);
+            }
+
+            var consent = null;
+            try { consent = localStorage.getItem('toyo_cookie_ok'); } catch (e) {}
+
+            if (consent === '1') {
+                loadGA4(); // ziyaretçi daha önce onay vermiş
+            } else {
+                // Onay bekleniyor: çerez bildirim çubuğu "Kabul Et" ile bu fonksiyonu çağırır
+                window.TOYO_LOAD_GA4 = loadGA4;
+            }
         })();
     </script>
 </head>
@@ -538,19 +558,19 @@
                     <div class="grid grid-cols-2 sm:grid-cols-4 theme-card rounded-xl border theme-border theme-shadow divide-y sm:divide-y-0 sm:divide-x overflow-hidden">
                         <div class="p-4">
                             <div class="font-mono font-bold text-2xl theme-accent-text">15+ Yıl</div>
-                            <div class="text-xs font-medium theme-muted mt-1">Endüstriyel Saha Tecrübesi</div>
+                            <div class="text-xs font-medium theme-muted mt-1">Ekip Tecrübesi</div>
                         </div>
                         <div class="p-4">
-                            <div class="font-mono font-bold text-2xl theme-accent-text">%98</div>
-                            <div class="text-xs font-medium theme-muted mt-1">İlk Müdahalede Çözüm Oranı</div>
+                            <div class="font-mono font-bold text-2xl theme-accent-text">4 Adım</div>
+                            <div class="text-xs font-medium theme-muted mt-1">Şeffaf Arıza Tespiti</div>
                         </div>
                         <div class="p-4">
                             <div class="font-mono font-bold text-2xl theme-accent-text">7/24</div>
                             <div class="text-xs font-medium theme-muted mt-1">Tam Donanımlı Mobil Araç</div>
                         </div>
                         <div class="p-4">
-                            <div class="font-mono font-bold text-2xl theme-accent-text">%100</div>
-                            <div class="text-xs font-medium theme-muted mt-1">Garantili İşçilik & Yedek Parça</div>
+                            <div class="font-mono font-bold text-2xl theme-accent-text">Yazılı</div>
+                            <div class="text-xs font-medium theme-muted mt-1">Garantili İşçilik &amp; Yedek Parça <a href="garanti.html" class="underline hover:opacity-80">(koşullar için Garanti Koşulları sayfası)</a></div>
                         </div>
                     </div>
                 </div>
@@ -665,7 +685,7 @@
                             <!-- KVKK Zorunlu Açık Rıza Onayı -->
                             <label class="flex items-start gap-2 text-xs theme-text-sec cursor-pointer">
                                 <input type="checkbox" name="kvkk_onay" required class="mt-0.5 accent-[#C8102E]">
-                                <span><a href="kvkk.html" target="_blank" rel="noopener" class="underline theme-accent-text">KVKK Aydınlatma Metni</a>'ni okudum; kişisel verilerimin talebimin değerlendirilmesi amacıyla işlenmesini kabul ediyorum.</span>
+                                <span><a href="kvkk.html" target="_blank" rel="noopener" class="underline theme-accent-text">KVKK Aydınlatma Metni</a>'ni okudum; kişisel verilerimin talebimin değerlendirilmesi amacıyla işlenmesini ve hizmet sağlayıcılarımız aracılığıyla yurt dışına aktarılmasını kabul ediyorum.</span>
                             </label>
 
                             <!-- Gönderim Seçenekleri (E-Posta Öncelikli + İsteğe Bağlı WhatsApp) -->
@@ -777,6 +797,12 @@
                     <div class="text-[11px] font-mono theme-muted mt-1">Mekanik & Revizyon</div>
                 </div>
             </div>
+
+            <!-- Yasal Not: Marka bağlamı (Bağımsız Özel Servis Bildirimi — kısa şerit) -->
+            <p class="mt-5 flex items-start gap-2 text-xs sm:text-sm theme-muted leading-relaxed">
+                <svg class="w-4 h-4 shrink-0 mt-0.5 theme-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Yukarıdaki marka adları yalnızca hizmet verilen makine tiplerini belirtir; Toyo Forklift Servis bu markaların yetkili servisi değildir. Ayrıntılar için <a href="hakkinda.html" class="underline theme-accent-text hover:opacity-80">bağımsız servis bildirimine</a> bakabilirsiniz.</span>
+            </p>
         </div>
     </section>
 
@@ -1148,7 +1174,7 @@
                                 <div class="text-xs theme-muted">Kurucu & Baş Teknik Uzman</div>
                             </div>
                             <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-500 font-mono text-xs font-bold">
-                                %100 Şeffaf Ekspertiz
+                                Şeffaf Ekspertiz
                             </span>
                         </div>
                     </div>
@@ -1199,6 +1225,12 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- Kurumsal Not: Bağımsız Özel Servis Bildirimi -->
+                    <p class="mt-8 flex items-start gap-2 text-xs sm:text-sm theme-muted leading-relaxed">
+                        <svg class="w-4 h-4 shrink-0 mt-0.5 theme-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span><strong class="theme-text font-semibold">Kurumsal not:</strong> Toyo Forklift Servis, baba-oğul ortaklığıyla faaliyet gösteren bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin yetkili servisi değildir. Verdiğimiz hizmetlerin kapsamı ve garanti koşulları için <a href="hakkinda.html" class="underline theme-accent-text hover:opacity-80">Hakkımızda &amp; Yasal Bildirimler</a> sayfamıza bakabilirsiniz.</span>
+                    </p>
                 </div>
 
             </div>
@@ -1224,7 +1256,7 @@
                         <span class="faq-icon theme-accent-text font-mono text-xl leading-none">+</span>
                     </button>
                     <div id="faq-content-1" role="region" aria-labelledby="faq-trigger-1" class="faq-content hidden px-6 pb-5 text-sm theme-text-sec leading-relaxed border-t theme-border pt-3">
-                        Evet. <strong>Toyo Forklift Servis</strong> bünyesindeki tam donanımlı mobil servis araçlarımızla arızaların %90'ından fazlasını fabrikanızda veya deponuzda yerinde çözüyoruz. Yalnızca komple motor rektifiyesi veya ağır şanzıman/şasi revizyonu gerektiren durumlarda makinayı merkez atölyemize alıyoruz.
+                        Evet. <strong>Toyo Forklift Servis</strong> bünyesindeki tam donanımlı mobil servis araçlarımızla arızaların büyük bölümünü fabrikanızda veya deponuzda yerinde çözüyoruz. Yalnızca komple motor rektifiyesi veya ağır şanzıman/şasi revizyonu gerektiren durumlarda makinayı merkez atölyemize alıyoruz.
                     </div>
                 </div>
 
@@ -1244,7 +1276,17 @@
                         <span class="faq-icon theme-accent-text font-mono text-xl leading-none">+</span>
                     </button>
                     <div id="faq-content-3" role="region" aria-labelledby="faq-trigger-3" class="faq-content hidden px-6 pb-5 text-sm theme-text-sec leading-relaxed border-t theme-border pt-3">
-                        Kesinlikle. Toyo Forklift Servis güvencesiyle gerçekleştirdiğimiz tüm motor, şanzıman, hidrolik ve elektronik kart revizyonları ile kullandığımız orijinal/OEM yedek parçalar kurumsal servis garantimiz altındadır.
+                        Evet. Toyo Forklift Servis olarak gerçekleştirdiğimiz motor, şanzıman, hidrolik ve elektronik kart revizyonları ile taktığımız orijinal/OEM yedek parçalar, iş emrinde belirtilen süre ve koşullarda yazılı garanti kapsamındadır. Garanti süresi, kapsamı ve kapsam dışı durumlar için <a href="garanti.html" class="underline theme-accent-text hover:opacity-80">Garanti Koşulları</a> sayfamızı incelemenizi öneririz.
+                    </div>
+                </div>
+
+                <div class="rounded-xl border theme-border theme-surface overflow-hidden">
+                    <button type="button" id="faq-trigger-4" class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-base theme-text cursor-pointer" aria-expanded="false" aria-controls="faq-content-4">
+                        <span>Toyo Forklift Servis, forklift üreticilerinin yetkili servisi midir?</span>
+                        <span class="faq-icon theme-accent-text font-mono text-xl leading-none">+</span>
+                    </button>
+                    <div id="faq-content-4" role="region" aria-labelledby="faq-trigger-4" class="faq-content hidden px-6 pb-5 text-sm theme-text-sec leading-relaxed border-t theme-border pt-3">
+                        Hayır. <strong>Toyo Forklift Servis</strong> bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Sitemizde geçen marka ve model adları yalnızca hizmet verdiğimiz makine tiplerini tanımlamak amacıyla kullanılmaktadır. Üreticiyi bağlayan yetkili servis hizmeti gereken durumlarda ilgili üreticinin yetkili servis ağına başvurmanızı öneririz. Ayrıntılar: <a href="hakkinda.html" class="underline theme-accent-text hover:opacity-80">Hakkımızda &amp; Yasal Bildirimler</a>.
                     </div>
                 </div>
             </div>
@@ -1428,7 +1470,7 @@
                             <!-- KVKK Zorunlu Açık Rıza Onayı -->
                             <label class="flex items-start gap-2 text-xs theme-text-sec cursor-pointer">
                                 <input type="checkbox" name="kvkk_onay" required class="mt-0.5 accent-[#C8102E]">
-                                <span><a href="kvkk.html" target="_blank" rel="noopener" class="underline theme-accent-text">KVKK Aydınlatma Metni</a>'ni okudum; kişisel verilerimin talebimin değerlendirilmesi amacıyla işlenmesini kabul ediyorum.</span>
+                                <span><a href="kvkk.html" target="_blank" rel="noopener" class="underline theme-accent-text">KVKK Aydınlatma Metni</a>'ni okudum; kişisel verilerimin talebimin değerlendirilmesi amacıyla işlenmesini ve hizmet sağlayıcılarımız aracılığıyla yurt dışına aktarılmasını kabul ediyorum.</span>
                             </label>
 
                             <button id="corporate-submit-btn" type="submit" class="w-full py-4 px-6 rounded-xl theme-btn-primary font-bold text-sm uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
@@ -1560,6 +1602,23 @@
                 </div>
             </div>
 
+            <!-- YASAL BLOK: bağlantılar + Bağımsız Özel Servis Bildirimi -->
+            <div class="pt-8 pb-2">
+                <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-5 text-xs font-bold text-white" aria-label="Yasal Bağlantılar">
+                    <span class="font-display uppercase tracking-wider text-zinc-300">Yasal:</span>
+                    <a href="kvkk.html" class="hover:text-white underline underline-offset-2 decoration-white/40">KVKK Aydınlatma Metni</a>
+                    <a href="kvkk.html#ceriz-politikasi" class="hover:text-white underline underline-offset-2 decoration-white/40">Çerez Politikası</a>
+                    <a href="garanti.html" class="hover:text-white underline underline-offset-2 decoration-white/40">Garanti Koşulları</a>
+                    <a href="hakkinda.html" class="hover:text-white underline underline-offset-2 decoration-white/40">Hakkımızda &amp; Yasal Bildirimler</a>
+                </nav>
+                <p class="text-xs leading-relaxed text-zinc-300 max-w-5xl mb-3">
+                    <strong class="text-white">Bağımsız Özel Servis Bildirimi:</strong> Toyo Forklift Servis bağımsız bir özel servis işletmesidir. Hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Sitede adı geçen üçüncü taraf marka ve model adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır. Bu markalarla ticari bir bağ, yetkilendirme veya sponsorluk ilişkisi bulunmamaktadır.
+                </p>
+                <p class="text-xs leading-relaxed text-zinc-300/90 max-w-5xl">
+                    7/24 acil servis hattı; saha müdahalesi bölge ve kapasiteye göre planlanır. İşçilik ve yedek parça garantisinin süresi ile kapsamı, iş emrinde yazılı olarak belirtilir; ayrıntılar için <a href="garanti.html" class="underline hover:text-white">Garanti Koşulları</a> sayfasına bakınız.
+                </p>
+            </div>
+
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
                 <p>&copy; 2026 Toyo Forklift Servis. Tüm Hakları Saklıdır.</p>
                 <p class="font-mono text-[11px]">7/24 Acil Servis: 0533 954 04 25 | E-Posta: aokty0@gmail.com</p>
@@ -1598,6 +1657,26 @@
             <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
             <span>WhatsApp</span>
         </a>
+    </div>
+
+    <!-- =====================================================================
+         12b. ÇEREZ BİLDİRİM ÇUBUĞU (alt şerit; zorlayıcı modal değil)
+          - Yalnızca GA4 etkinse görünür: G-XXXXXXXXXX placeholder durduğu
+            sürece window.TOYO_GA4_PLACEHOLDER = true kalır ve çubuk gizli kalır.
+          - Tercih localStorage `toyo_cookie_ok` anahtarında hatırlanır.
+          - Mobilde sabit CTA barının (h-14) hemen üstünde, masaüstünde sol altta
+            konumlanır; CTA barıyla çakışmaz.
+    ====================================================================== -->
+    <div id="cookie-notice-bar" class="hidden fixed left-0 right-0 bottom-14 lg:left-4 lg:right-auto lg:bottom-4 lg:max-w-md z-40" role="region" aria-label="Çerez Bildirimi">
+        <div class="m-3 lg:m-0 p-4 rounded-xl theme-card border theme-border theme-shadow">
+            <p class="text-xs theme-text-sec leading-relaxed mb-3">
+                Sitemizin performansını ölçmek için, analitik hizmeti etkin olduğunda çerez kullanırız. Tercihinizi istediğiniz zaman değiştirebilirsiniz; ayrıntılar <a href="kvkk.html#ceriz-politikasi" class="underline theme-accent-text hover:opacity-80">Çerez Politikası</a>'nda.
+            </p>
+            <div class="flex flex-wrap gap-2">
+                <button id="cookie-accept-btn" type="button" class="px-4 py-2 rounded-lg theme-btn-primary text-xs font-bold uppercase tracking-wide cursor-pointer">Kabul Et</button>
+                <button id="cookie-decline-btn" type="button" class="px-4 py-2 rounded-lg theme-surface border theme-border theme-text text-xs font-bold uppercase tracking-wide hover:opacity-90 cursor-pointer">Reddet</button>
+            </div>
+        </div>
     </div>
 
     <!-- =====================================================================
@@ -2281,6 +2360,41 @@
                 }
             });
         }
+
+        /* -------------------------------------------------------------------
+           ÇEREZ BİLDİRİM ÇUBUĞU
+          - Çubuk yalnızca GA4 etkinse (gerçek Measurement ID girildiyse) görünür;
+            G-XXXXXXXXXX placeholder durduğu sürece tamamen gizli kalır.
+          - Tercih localStorage `toyo_cookie_ok` ("1" kabul / "0" red) ile hatırlanır.
+          - Kabul edilirse head içindeki GA4 modülünün loadGA4 fonksiyonu çağrılır.
+        -------------------------------------------------------------------- */
+        (function() {
+            const cookieBar = document.getElementById('cookie-notice-bar');
+            if (!cookieBar) return;
+            if (window.TOYO_GA4_PLACEHOLDER) return; // analitik henüz etkin değil -> bildirim gerekmez
+
+            let cookieConsent = null;
+            try { cookieConsent = localStorage.getItem('toyo_cookie_ok'); } catch (e) {}
+            if (cookieConsent === '1' || cookieConsent === '0') return; // tercih zaten verilmiş
+
+            cookieBar.classList.remove('hidden');
+
+            function rememberCookieConsent(value) {
+                try { localStorage.setItem('toyo_cookie_ok', value); } catch (e) {}
+                cookieBar.classList.add('hidden');
+            }
+
+            const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
+            const cookieDeclineBtn = document.getElementById('cookie-decline-btn');
+
+            if (cookieAcceptBtn) cookieAcceptBtn.addEventListener('click', function() {
+                rememberCookieConsent('1');
+                if (typeof window.TOYO_LOAD_GA4 === 'function') window.TOYO_LOAD_GA4();
+            });
+            if (cookieDeclineBtn) cookieDeclineBtn.addEventListener('click', function() {
+                rememberCookieConsent('0');
+            });
+        })();
     </script>
 </body>
 </html>
