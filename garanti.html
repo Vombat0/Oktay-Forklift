@@ -3,21 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- B6: tarayici arayuzu (adres cubugu) tema rengi; koyu deger medya sorgusuyla sonraki gelir ve onu override eder -->
-    <meta name="theme-color" content="#C8102E">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1114">
-    <title>Garanti Koşulları | Toyo Forklift Servis</title>
-    <meta name="description" content="Toyo Forklift Servis garanti koşulları: işçilik ve yedek parça garantisi kapsamı, süresi, kapsam dışı durumlar, garanti başvuru yöntemi ve yasal haklarınız.">
+    <meta name="theme-color" content="#C2410C">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090D16">
+    <title>Garanti Koşulları | ASN Özel Forklift Servis</title>
+    <meta name="description" content="ASN Özel Forklift Servis garanti koşulları: 6 ay / 500 çalışma saati işçilik garantisi, orijinal ve A-kalite muadil parçalarda 6–12 ay parça garantisi, kapsam dışı hâller ve başvuru yöntemi.">
     <meta name="robots" content="index, follow">
 
-    <!-- Favicon: ana site ile aynı data-URI SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C8102E'/%3E%3Ctext x='32' y='47' font-family='Arial, Helvetica, sans-serif' font-size='42' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+    <!-- Favicon & Apple Touch Icon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C2410C'/%3E%3Ctext x='32' y='40' font-family='Arial, Helvetica, sans-serif' font-size='22' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EASN%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <!-- TODO: yayın alan adı gelince canonical adresi güncelleyin -->
-    <link rel="canonical" href="https://ornek-alan-adi.com/garanti.html">
+    <link rel="canonical" href="https://asnforkliftservis.com.tr/garanti.html">
 
-    <!-- B1: CDN yerine yerel derlenmis Tailwind CSS (npm run build:css ile uretilir;
-         FOUC olmamasi icin head icinde erken yuklenir) -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ASN Özel Forklift Servis">
+    <meta property="og:title" content="Garanti Koşulları | ASN Özel Forklift Servis">
+    <meta property="og:description" content="ASN Özel Forklift Servis garanti koşulları: 6 ay / 500 çalışma saati işçilik garantisi, orijinal ve A-kalite muadil parçalarda 6–12 ay parça garantisi, kapsam dışı hâller ve başvuru yöntemi.">
+    <meta property="og:url" content="https://asnforkliftservis.com.tr/garanti.html">
+    <meta property="og:image" content="https://asnforkliftservis.com.tr/og-gorsel.png">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Garanti Koşulları | ASN Özel Forklift Servis">
+    <meta name="twitter:description" content="ASN Özel Forklift Servis garanti koşulları: 6 ay / 500 çalışma saati işçilik garantisi, orijinal ve A-kalite muadil parçalarda 6–12 ay parça garantisi, kapsam dışı hâller ve başvuru yöntemi.">
+    <meta name="twitter:image" content="https://asnforkliftservis.com.tr/og-gorsel.png">
+
+    <!-- Yapısal Veri (WebPage + BreadcrumbList) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://asnforkliftservis.com.tr/garanti.html#webpage",
+          "url": "https://asnforkliftservis.com.tr/garanti.html",
+          "name": "Garanti Koşulları | ASN Özel Forklift Servis",
+          "description": "ASN Özel Forklift Servis garanti koşulları: 6 ay / 500 çalışma saati işçilik garantisi, orijinal ve A-kalite muadil parçalarda 6–12 ay parça garantisi.",
+          "inLanguage": "tr-TR",
+          "isPartOf": {
+            "@id": "https://asnforkliftservis.com.tr/#website"
+          },
+          "about": {
+            "@id": "https://asnforkliftservis.com.tr/#business"
+          },
+          "breadcrumb": {
+            "@id": "https://asnforkliftservis.com.tr/garanti.html#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://asnforkliftservis.com.tr/garanti.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://asnforkliftservis.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Garanti Koşulları",
+              "item": "https://asnforkliftservis.com.tr/garanti.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Yerel derlenmiş Tailwind CSS -->
     <link rel="stylesheet" href="assets/styles.css">
 
     <!-- Google Fonts -->
@@ -25,11 +83,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Tema flaşını önleyen erken script (index.html ile aynı localStorage anahtarı: toyo_theme) -->
+    <!-- Tema flaşını önleyen erken script (asn_theme birincil + toyo_theme fallback) -->
     <script>
         (function() {
             try {
-                var savedTheme = localStorage.getItem('toyo_theme');
+                var savedTheme = localStorage.getItem('asn_theme') || localStorage.getItem('toyo_theme');
                 if (savedTheme === 'dark') {
                     document.documentElement.classList.add('dark');
                 } else {
@@ -38,15 +96,16 @@
             } catch (e) {}
         })();
     </script>
-
 </head>
 <body class="theme-body font-sans antialiased">
+
+    <a href="#main-content" class="skip-link">İçeriğe geç</a>
 
     <!-- ÜST BAR: logo + ana sayfaya dönüş + tema butonu -->
     <header class="sticky top-0 z-50 enterprise-header border-b theme-border">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20 gap-4">
-                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="Toyo Forklift Servis Anasayfa">
+                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="ASN Özel Forklift Servis Anasayfa">
                     <div class="w-12 h-12 flex items-center justify-center shrink-0" style="width: 48px; height: 48px;">
                         <svg viewBox="0 0 200 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path class="svg-gear" d="M84 10 H116 L122 27 A74 74 0 0 1 139 34 L155 22 L178 45 L166 61 A74 74 0 0 1 173 78 L190 84 V116 L173 122 A74 74 0 0 1 166 139 L178 155 L155 178 L139 166 A74 74 0 0 1 122 173 L116 190 H84 L78 173 A74 74 0 0 1 61 166 L45 178 L22 155 L34 139 A74 74 0 0 1 27 122 L10 116 V84 L27 78 A74 74 0 0 1 34 61 L22 45 L45 22 L61 34 A74 74 0 0 1 78 27 Z" />
@@ -70,8 +129,8 @@
                         </svg>
                     </div>
                     <div class="flex flex-col justify-center whitespace-nowrap">
-                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">TOYO</span>
-                        <span class="font-brand font-bold text-[10px] tracking-[0.22em] theme-muted uppercase mt-1 leading-none">FORKLIFT SERVİS</span>
+                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">ASN</span>
+                        <span class="inline-block mt-1 px-1.5 py-0.5 rounded theme-surface border theme-border font-brand font-bold text-[9px] tracking-[0.14em] theme-muted uppercase leading-none">ÖZEL FORKLİFT SERVİS</span>
                     </div>
                 </a>
 
@@ -82,116 +141,162 @@
                     </a>
                     <button type="button" onclick="toggleSiteTheme()" data-theme-toggle aria-pressed="false" aria-label="Koyu temaya geç" title="Gece / Gündüz Modunu Değiştir" class="p-2.5 rounded-lg border theme-border theme-surface theme-text hover:opacity-80 transition-all cursor-pointer shrink-0">
                         <svg class="theme-icon-moon-el w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                        <svg class="theme-icon-sun-el w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                        <svg class="theme-icon-sun-el w-5 h-5 text-brand-red dark:text-brand-orange hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-
-        <!-- Taslak uyarı kutusu -->
-        <div class="mb-8 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
-            <p class="text-sm font-bold text-amber-600 dark:text-amber-400 flex items-center gap-2">
-                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.48 0L3.16 16.25A2 2 0 005 19z"></path></svg>
-                Bu metin taslaktır; yayına almadan önce hukuk danışmanına inceletin.
-            </p>
-        </div>
+    <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
 
         <h1 class="font-display font-extrabold text-3xl sm:text-4xl theme-text tracking-tight mb-3">
             Garanti Koşulları
         </h1>
-        <p class="text-sm theme-text-sec leading-relaxed mb-10">
-            Toyo Forklift Servis olarak verdiğimiz işçilik ve yedek parça garantisinin kapsamı, süresi ve koşulları aşağıda açıklanmıştır. Her servisin ardından düzenlenen iş emrinde yer alan garanti bilgileri esas alır. Toyo Forklift Servis bağımsız bir özel servis işletmesidir; bu garanti üreticinin verdiği garantinin yerine geçmez.
+        <p class="text-sm theme-text-sec leading-relaxed mb-8">
+            <strong class="theme-text">ASN Özel Forklift Servis ve İstif Makinaları Bakım Onarım Hizmetleri</strong> olarak verdiğimiz işçilik ve yedek parça garantisinin kapsamı, süresi ve koşulları aşağıda açıklanmıştır. Her servis işlemi sonrasında düzenlenen yazılı iş emri ve faturada yer alan garanti kayıtları esas alınır. ASN Özel Forklift Servis bağımsız bir özel servis işletmesidir; bu garanti üretici firmaların verdiği fabrika garantisinin yerine geçmez.
         </p>
+
+        <!-- Teknik Garanti Özeti: 3 Adet Inline SVG Teknik Rozet / Diyagram Kartı -->
+        <section aria-label="Garanti güvence özeti" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            <div class="theme-card rounded-2xl border theme-border theme-shadow p-5 flex flex-col gap-3">
+                <div class="w-12 h-12 rounded-xl theme-elevated border theme-border flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 48 48" class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M24 5L39 10.5V22.5C39 31.8 32.6 40.1 24 43C15.4 40.1 9 31.8 9 22.5V10.5L24 5Z" class="svg-gear" fill-opacity="0.14" stroke="currentColor" stroke-width="2"/>
+                        <path d="M24 9L35 13V22.5C35 29.7 30.2 36.2 24 38.6C17.8 36.2 13 29.7 13 22.5V13L24 9Z" stroke="var(--brand-primary)" stroke-width="2.2"/>
+                        <path d="M18.5 24L22.2 27.7L30 19.8" stroke="#10B981" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-mono text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">6 Ay / 500 Çalışma Saati</span>
+                    <h2 class="font-display font-bold text-base theme-text mt-1">İşçilik Garantisi</h2>
+                    <p class="text-xs theme-text-sec leading-relaxed mt-1.5">
+                        Motor, şanzıman, hidrolik ve elektronik kart onarımlarında işçilikten doğan arızalara karşı yazılı güvence.
+                    </p>
+                </div>
+            </div>
+
+            <div class="theme-card rounded-2xl border theme-border theme-shadow p-5 flex flex-col gap-3">
+                <div class="w-12 h-12 rounded-xl theme-elevated border theme-border flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 48 48" class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="9" y="7" width="30" height="34" rx="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 15H32" stroke="var(--brand-primary)" stroke-width="2.4" stroke-linecap="round"/>
+                        <path d="M16 22H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16 28H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="30" cy="29" r="6" stroke="#10B981" stroke-width="2.2"/>
+                        <path d="M30 29L33 26.5" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-mono text-xs font-bold uppercase tracking-wider theme-accent-text">Ölçüm &amp; İş Emri Kaydı</span>
+                    <h2 class="font-display font-bold text-base theme-text mt-1">Kalibrasyon &amp; Test Raporu</h2>
+                    <p class="text-xs theme-text-sec leading-relaxed mt-1.5">
+                        Teslimat öncesi basınç, yük kaldırma, fren ve emniyet kontrolleri ölçüm değerleriyle raporlanır.
+                    </p>
+                </div>
+            </div>
+
+            <div class="theme-card rounded-2xl border theme-border theme-shadow p-5 flex flex-col gap-3">
+                <div class="w-12 h-12 rounded-xl theme-elevated border theme-border flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 48 48" class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/>
+                        <circle cx="24" cy="24" r="8" stroke="var(--brand-primary)" stroke-width="2.4"/>
+                        <path d="M24 6V11M24 37V42M6 24H11M37 24H42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                        <circle cx="24" cy="24" r="2.5" fill="#10B981"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-mono text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">6–12 Ay Parça Garantisi</span>
+                    <h2 class="font-display font-bold text-base theme-text mt-1">Orijinal / OEM Parça Güvencesi</h2>
+                    <p class="text-xs theme-text-sec leading-relaxed mt-1.5">
+                        Orijinal (OEM) ve A-kalite muadil yedek parçalar üretici/tedarikçi garantisiyle faturalandırılır.
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <div class="space-y-8">
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">1. Garanti Kapsamı — İşçilik</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">
-                    Tarafımızca gerçekleştirilen motor, şanzıman, hidrolik, akü ve elektronik kart onarım ve revizyonları; işlemin doğru ve mevzuata/teknik kurallara uygun yapılmamış olmasından kaynaklanan arızalara karşı garanti kapsamındadır. Garanti süresi: <span class="todo-placeholder">[GARANTİ SÜRESİ]</span> (iş emrinde yazılı süre esas alır).
+                    Tarafımızca gerçekleştirilen motor, şanzıman, hidrolik sistem, akü grubu ve elektronik kart onarım ve revizyonları; işlemin teknik kurallara uygun yapılmamış olmasından kaynaklanan işçilik hatalarına karşı <strong class="theme-text">6 Ay / 500 Çalışma Saati</strong> (hangisi önce dolarsa) garanti kapsamındadır. İş emrinde farklı bir özel süre tanımlanmışsa yazılı iş emri kaydı esas alınır.
                 </p>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Garanti kapsamındaki başvurularda işçilik ve onarım sırasında kullanılan malzeme için ayrıca ücret talep edilmez. Garanti süresi, servis edilen makinanın size teslim edildiği tarihten itibaren başlar; iş emrinde farklı bir tarih belirtilmişse o tarih esas alınır.
+                    Garanti kapsamındaki başvurularda onarım işçiliği ve hata giderimi için kullanılan tamamlayıcı malzeme adına ayrıca ücret talep edilmez. Garanti süresi, servis edilen makinanın müşteriye çalışır vaziyette teslim edildiği tarihten itibaren başlar.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">2. Garanti Kapsamı — Yedek Parça</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">
-                    Tarafımızca tedarik edilip takılan orijinal veya OEM yedek parçalar, üretici/tedarikçi firma garantisinin sağladığı haklar saklı kalmak kaydıyla, malzeme ve üretim hatalarına karşı garanti kapsamındadır. Parça bazında garanti süresi fatura/iş emrinde belirtilir; belirtilmemişse <span class="todo-placeholder">[PARÇA GARANTİ SÜRESİ]</span>.
+                    Tarafımızca tedarik edilip montajı yapılan <strong class="theme-text">orijinal (OEM) ve A-kalite muadil yedek parçalar</strong>, üretici/tedarikçi firma garantisinin sağladığı haklar saklı kalmak kaydıyla, malzeme ve üretim hatalarına karşı <strong class="theme-text">6–12 Ay (üretici/tedarikçi garantisi kapsamında)</strong> güvence altındadır. Her parçaya ait kesin garanti süresi ilgili fatura ve iş emrinde belirtilir.
                 </p>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Garanti süresi içinde arızalanan parça, incelemeyi takiben ücretsiz olarak onarılır veya misli ile değiştirilir. Eşdeğer parça bulunamaması hâlinde taraflar karşılıklı mutabakatla çözüm belirler.
+                    Garanti süresi içinde malzeme veya üretim hatası nedeniyle arızalanan parça, teknik incelemeyi takiben ücretsiz olarak onarılır veya eşdeğeri ile değiştirilir. Eşdeğer parçanın stokta veya tedarik zincirinde bulunamaması hâlinde taraflar karşılıklı mutabakatla alternatif çözüm belirler.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">3. Garanti Kapsamı Dışındaki Durumlar</h2>
-                <p class="text-sm theme-text-sec leading-relaxed mb-3">Aşağıdaki hâller garanti kapsamı dışındadır:</p>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">Aşağıdaki hâller işçilik ve yedek parça garantisi kapsamı dışındadır:</p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li><strong class="theme-text">Yanlış kullanım:</strong> makinanın teknik özelliklerine ve kullanım kılavuzuna aykırı kullanım (kaldırma kapasitesinin üzerinde yükleme, uygun olmayan zemin/sıcaklık şartlarında çalıştırma vb.)</li>
+                    <li><strong class="theme-text">Yanlış kullanım:</strong> makinanın teknik özelliklerine ve kullanım kılavuzuna aykırı çalıştırma (kaldırma kapasitesinin üzerinde yükleme, uygun olmayan zemin/eğim/sıcaklık şartlarında kullanım vb.)</li>
                     <li><strong class="theme-text">Aşırı yük ve zorlama:</strong> kapasite aşımı, darbe, devrilme, çarpma ve benzeri mekanik zorlanmalar</li>
-                    <li><strong class="theme-text">Yetkisiz müdahale:</strong> tarafımızdan verilmiş bir onay olmadan müşteri veya üçüncü kişilerce yapılan sökme, tamir, modifikasyon, yazılım/parametre değişikliği ve kaynaksız işlemler</li>
-                    <li><strong class="theme-text">Sarf malzemeleri:</strong> filtre, yağ, fren balatası, kavrama diskleri, lastik, sürtünme balatası, ampul, sigorta gibi tüketim/normal değişim parçaları (üretim hatası hariç)</li>
-                    <li><strong class="theme-text">Normal aşınma:</strong> zamanla oluşacak olağan aşınma, yıpranma ve performans düşüşleri</li>
-                    <li><strong class="theme-text">Dış etkenler:</strong> hatalı yakıt/kaynak elektriği, su baskını, yıldırım, yangın, kaza ve benzeri mücbir sebepler</li>
-                    <li><strong class="theme-text">Önerilen bakımın yapılmaması:</strong> periyodik bakımı aksatılmış makinada bu aksatmayla nedensellik bağı olan arızalar</li>
+                    <li><strong class="theme-text">Yetkisiz müdahale:</strong> tarafımızdan verilmiş yazılı onay olmadan müşteri veya üçüncü kişilerce yapılan sökme, tamir, modifikasyon, yazılım/parametre değişikliği ve kaynak/kesim işlemleri</li>
+                    <li><strong class="theme-text">Sarf malzemeleri:</strong> filtre, yağ, fren balatası, kavrama diskleri, lastik, sürtünme balatası, ampul, sigorta gibi tüketim/periyodik değişim parçaları (üretim hatası hariç)</li>
+                    <li><strong class="theme-text">Normal aşınma:</strong> çalışma saatine ve saha şartlarına bağlı olağan aşınma, yıpranma ve performans düşüşleri</li>
+                    <li><strong class="theme-text">Dış etkenler:</strong> hatalı yakıt veya şebeke/şarj elektriği, su baskını, yıldırım, yangın, kaza ve benzeri mücbir sebepler</li>
+                    <li><strong class="theme-text">Önerilen bakımın yapılmaması:</strong> 250 / 500 / 1000 / 2000 saatlik periyodik bakımı aksatılmış makinada bu aksamayla nedensellik bağı bulunan arızalar</li>
                 </ul>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">4. Garanti Başvuru Yöntemi</h2>
-                <p class="text-sm theme-text-sec leading-relaxed mb-3">Garanti başvurularınızı şu kanallardan iletebilirsiniz:</p>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">Garanti kapsamındaki teknik inceleme taleplerinizi şu kanallardan bize iletebilirsiniz:</p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li>Telefon / WhatsApp: <a href="tel:+905339540425" class="underline theme-accent-text">0533 954 04 25</a></li>
-                    <li>E-posta: <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a></li>
-                    <li>Web sitesi servis talep formu: <a href="index.html#ariza-ve-servis-paneli" class="underline theme-accent-text">Hızlı Arıza &amp; Servis İş Emri Paneli</a></li>
+                    <li><strong class="theme-text">Telefon / WhatsApp (7/24 Acil Hat):</strong> <a href="tel:+905339540425" class="underline theme-accent-text font-mono">0533 954 04 25</a></li>
+                    <li><strong class="theme-text">E-posta:</strong> <a href="mailto:servis@asnforkliftservis.com.tr" class="underline theme-accent-text">servis@asnforkliftservis.com.tr</a> (alternatif hızlı iletişim: <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a>)</li>
+                    <li><strong class="theme-text">Web sitesi servis talep formu:</strong> <a href="index.html#ariza-ve-servis-paneli" class="underline theme-accent-text">Hızlı Arıza &amp; Servis İş Emri Paneli</a></li>
+                    <li><strong class="theme-text">Hizmet Bölgesi &amp; Çalışma Saatleri:</strong> İstanbul ve Marmara Bölgesi Sanayi Bölgeleri | Planlı Bakım &amp; Atölye: Pazartesi–Cumartesi 08:30–18:30 | Mobil Acil Arıza Müdahale: 7/24 Kesintisiz</li>
                 </ul>
                 <p class="text-sm theme-text-sec leading-relaxed mt-3">
-                    Başvuruda iş emri/talep referans numarası, makina marka-model ve arıza belirtisini paylaşmanız incelemeyi hızlandırır. Başvurunuz en kısa sürede değerlendirilir; gerekirse makinaya yerinde veya atölyede ücretsiz ön inceleme yapılır.
+                    Başvuruda iş emri/talep referans numarası, makina marka-model bilgisi, çalışma saati ve arıza belirtisini paylaşmanız incelemeyi hızlandırır. Talebiniz öncelikli olarak değerlendirilir; gerekirse makinaya sahada veya merkez atölyemizde ücretsiz ön inceleme yapılır.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">5. Yasal Haklar Saklıdır</h2>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Bu sayfadaki garanti, <strong class="theme-text">6502 sayılı Tüketicinin Korunması Hakkında Kanun</strong> ve ilgili mevzuattan doğan zorunlu ayıp sorumluluğu ve garanti haklarınızı daraltmaz; bu haklarınız saklıdır. Tüketici işlemlerinde kanuni garanti haklarınız için ilgili mevzuat hükümleri uygulanır. Uyuşmazlıklarda yasal başvuru yollarınız saklıdır.
+                    Bu sayfadaki garanti koşulları, <strong class="theme-text">6502 sayılı Tüketicinin Korunması Hakkında Kanun</strong>, <strong class="theme-text">6098 sayılı Türk Borçlar Kanunu</strong> ve ilgili mevzuattan doğan zorunlu ayıp sorumluluğu ile yasal haklarınızı daraltmaz. Uyuşmazlıklarda yürürlükteki mevzuat çerçevesinde yasal başvuru yollarınız saklıdır.
                 </p>
             </section>
 
         </div>
 
-        <div class="mt-10 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
-            <p class="text-sm font-bold text-amber-600 dark:text-amber-400">
-                Önemli: Bu metin taslak niteliğindedir; garanti süreleri ve kapsamı yayına alınmadan önce mutlaka bir hukuk danışmanına incelettirilmelidir.
-            </p>
-        </div>
-
-        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 16.11.2026</p>
+        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 17.11.2026</p>
     </main>
 
     <!-- Sade footer -->
-    <footer class="bg-[#C8102E] text-zinc-300 border-t border-white/10 mt-6">
+    <footer class="bg-brand-redDark text-zinc-100 border-t border-white/15 mt-6">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <p>&copy; 2026 Toyo Forklift Servis. Tüm Hakları Saklıdır.</p>
+            <p>&copy; 2026 ASN Özel Forklift Servis. Tüm Hakları Saklıdır.</p>
             <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1" aria-label="Yasal bağlantılar">
                 <a href="kvkk.html" class="underline hover:text-white">KVKK</a>
-                <a href="hakkinda.html" class="underline hover:text-white">Hakkımızda &amp; Yasal Bildirimler</a>
+                <a href="garanti.html" class="underline hover:text-white">Garanti Koşulları</a>
+                <a href="hakkinda.html" class="underline hover:text-white">Hakkımızda</a>
                 <a href="index.html" class="underline hover:text-white">Anasayfa</a>
             </nav>
         </div>
         <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-6">
-            <p class="text-xs text-zinc-300/90 leading-relaxed">
-                Toyo Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
+            <p class="text-xs text-white/90 leading-relaxed">
+                ASN Özel Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
             </p>
         </div>
     </footer>
 
     <script>
-        /* Tema sistemi: index.html ile aynı davranış ve aynı localStorage anahtarı (toyo_theme) */
+        /* Tema sistemi: asn_theme birincil anahtar + toyo_theme geriye dönük uyumluluk */
         function syncThemeUI() {
             const isDark = document.documentElement.classList.contains('dark');
             document.querySelectorAll('.theme-icon-moon-el').forEach(el => {
@@ -212,10 +317,16 @@
             const willBeDark = !htmlEl.classList.contains('dark');
             if (willBeDark) {
                 htmlEl.classList.add('dark');
-                try { localStorage.setItem('toyo_theme', 'dark'); } catch (e) {}
+                try {
+                    localStorage.setItem('asn_theme', 'dark');
+                    localStorage.setItem('toyo_theme', 'dark');
+                } catch (e) {}
             } else {
                 htmlEl.classList.remove('dark');
-                try { localStorage.setItem('toyo_theme', 'light'); } catch (e) {}
+                try {
+                    localStorage.setItem('asn_theme', 'light');
+                    localStorage.setItem('toyo_theme', 'light');
+                } catch (e) {}
             }
             syncThemeUI();
         }

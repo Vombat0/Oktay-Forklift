@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: yayın alan adı gelince güncelle (https://ornek-alan-adi.com/ → gerçek alan adı) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ornek-alan-adi.com/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <loc>https://asnforkliftservis.com.tr/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ornek-alan-adi.com/kvkk.html</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://asnforkliftservis.com.tr/hakkinda.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ornek-alan-adi.com/garanti.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <loc>https://asnforkliftservis.com.tr/garanti.html</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ornek-alan-adi.com/hakkinda.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <loc>https://asnforkliftservis.com.tr/kvkk.html</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
 </urlset>

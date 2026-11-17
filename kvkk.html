@@ -3,20 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- B6: tarayici arayuzu (adres cubugu) tema rengi; koyu deger medya sorgusuyla sonraki gelir ve onu override eder -->
-    <meta name="theme-color" content="#C8102E">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1114">
-    <title>KVKK Aydınlatma Metni | Toyo Forklift Servis</title>
-    <meta name="description" content="Toyo Forklift Servis KVKK aydınlatma metni: işlenen kişisel veriler, işleme amaçları, hukuki sebepler, saklama süresi, verilerin aktarımı ve KVKK m.11 kapsamındaki haklarınız.">
+    <meta name="theme-color" content="#C2410C">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090D16">
+    <title>KVKK Aydınlatma Metni | ASN Özel Forklift Servis</title>
+    <meta name="description" content="ASN Özel Forklift Servis KVKK aydınlatma metni: veri sorumlusu, işlenen kişisel veriler, saklama süreleri (3 yıl / 10 yıl / 26 ay), yurt dışı aktarım ve KVKK m.11 kapsamındaki haklarınız.">
+    <meta name="robots" content="index, follow">
 
-    <!-- Favicon: ana site ile aynı data-URI SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C8102E'/%3E%3Ctext x='32' y='47' font-family='Arial, Helvetica, sans-serif' font-size='42' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+    <!-- Favicon & Apple Touch Icon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C2410C'/%3E%3Ctext x='32' y='40' font-family='Arial, Helvetica, sans-serif' font-size='22' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EASN%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <!-- TODO: yayın alan adı gelince canonical adresi güncelleyin -->
-    <link rel="canonical" href="https://ornek-alan-adi.com/kvkk.html">
+    <link rel="canonical" href="https://asnforkliftservis.com.tr/kvkk.html">
 
-    <!-- B1: CDN yerine yerel derlenmis Tailwind CSS (npm run build:css ile uretilir;
-         FOUC olmamasi icin head icinde erken yuklenir) -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ASN Özel Forklift Servis">
+    <meta property="og:title" content="KVKK Aydınlatma Metni | ASN Özel Forklift Servis">
+    <meta property="og:description" content="ASN Özel Forklift Servis KVKK aydınlatma metni: veri sorumlusu, işlenen kişisel veriler, saklama süreleri (3 yıl / 10 yıl / 26 ay), yurt dışı aktarım ve KVKK m.11 kapsamındaki haklarınız.">
+    <meta property="og:url" content="https://asnforkliftservis.com.tr/kvkk.html">
+    <meta property="og:image" content="https://asnforkliftservis.com.tr/og-gorsel.png">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KVKK Aydınlatma Metni | ASN Özel Forklift Servis">
+    <meta name="twitter:description" content="ASN Özel Forklift Servis KVKK aydınlatma metni: veri sorumlusu, işlenen kişisel veriler, saklama süreleri (3 yıl / 10 yıl / 26 ay), yurt dışı aktarım ve KVKK m.11 kapsamındaki haklarınız.">
+    <meta name="twitter:image" content="https://asnforkliftservis.com.tr/og-gorsel.png">
+
+    <!-- Yapısal Veri (WebPage + BreadcrumbList) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://asnforkliftservis.com.tr/kvkk.html#webpage",
+          "url": "https://asnforkliftservis.com.tr/kvkk.html",
+          "name": "KVKK Aydınlatma Metni | ASN Özel Forklift Servis",
+          "description": "ASN Özel Forklift Servis KVKK aydınlatma metni: veri sorumlusu, işlenen kişisel veriler, saklama süreleri ve KVKK m.11 kapsamındaki haklarınız.",
+          "inLanguage": "tr-TR",
+          "isPartOf": {
+            "@id": "https://asnforkliftservis.com.tr/#website"
+          },
+          "about": {
+            "@id": "https://asnforkliftservis.com.tr/#business"
+          },
+          "breadcrumb": {
+            "@id": "https://asnforkliftservis.com.tr/kvkk.html#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://asnforkliftservis.com.tr/kvkk.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://asnforkliftservis.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "KVKK Aydınlatma Metni",
+              "item": "https://asnforkliftservis.com.tr/kvkk.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Yerel derlenmiş Tailwind CSS -->
     <link rel="stylesheet" href="assets/styles.css">
 
     <!-- Google Fonts -->
@@ -24,11 +83,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Tema flaşını önleyen erken script (index.html ile aynı localStorage anahtarı: toyo_theme) -->
+    <!-- Tema flaşını önleyen erken script (asn_theme birincil + toyo_theme fallback) -->
     <script>
         (function() {
             try {
-                var savedTheme = localStorage.getItem('toyo_theme');
+                var savedTheme = localStorage.getItem('asn_theme') || localStorage.getItem('toyo_theme');
                 if (savedTheme === 'dark') {
                     document.documentElement.classList.add('dark');
                 } else {
@@ -37,15 +96,16 @@
             } catch (e) {}
         })();
     </script>
-
 </head>
 <body class="theme-body font-sans antialiased">
+
+    <a href="#main-content" class="skip-link">İçeriğe geç</a>
 
     <!-- ÜST BAR: logo + ana sayfaya dönüş + tema butonu -->
     <header class="sticky top-0 z-50 enterprise-header border-b theme-border">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20 gap-4">
-                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="Toyo Forklift Servis Anasayfa">
+                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="ASN Özel Forklift Servis Anasayfa">
                     <div class="w-12 h-12 flex items-center justify-center shrink-0" style="width: 48px; height: 48px;">
                         <svg viewBox="0 0 200 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path class="svg-gear" d="M84 10 H116 L122 27 A74 74 0 0 1 139 34 L155 22 L178 45 L166 61 A74 74 0 0 1 173 78 L190 84 V116 L173 122 A74 74 0 0 1 166 139 L178 155 L155 178 L139 166 A74 74 0 0 1 122 173 L116 190 H84 L78 173 A74 74 0 0 1 61 166 L45 178 L22 155 L34 139 A74 74 0 0 1 27 122 L10 116 V84 L27 78 A74 74 0 0 1 34 61 L22 45 L45 22 L61 34 A74 74 0 0 1 78 27 Z" />
@@ -69,8 +129,8 @@
                         </svg>
                     </div>
                     <div class="flex flex-col justify-center whitespace-nowrap">
-                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">TOYO</span>
-                        <span class="font-brand font-bold text-[10px] tracking-[0.22em] theme-muted uppercase mt-1 leading-none">FORKLIFT SERVİS</span>
+                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">ASN</span>
+                        <span class="inline-block mt-1 px-1.5 py-0.5 rounded theme-surface border theme-border font-brand font-bold text-[9px] tracking-[0.14em] theme-muted uppercase leading-none">ÖZEL FORKLİFT SERVİS</span>
                     </div>
                 </a>
 
@@ -81,94 +141,93 @@
                     </a>
                     <button type="button" onclick="toggleSiteTheme()" data-theme-toggle aria-pressed="false" aria-label="Koyu temaya geç" title="Gece / Gündüz Modunu Değiştir" class="p-2.5 rounded-lg border theme-border theme-surface theme-text hover:opacity-80 transition-all cursor-pointer shrink-0">
                         <svg class="theme-icon-moon-el w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                        <svg class="theme-icon-sun-el w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                        <svg class="theme-icon-sun-el w-5 h-5 text-brand-red dark:text-brand-orange hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-
-        <!-- Taslak uyarı kutusu -->
-        <div class="mb-8 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
-            <p class="text-sm font-bold text-amber-600 dark:text-amber-400 flex items-center gap-2">
-                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.48 0L3.16 16.25A2 2 0 005 19z"></path></svg>
-                Bu metin taslaktır; yayına almadan önce hukuk danışmanına inceletin.
-            </p>
-        </div>
+    <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
 
         <h1 class="font-display font-extrabold text-3xl sm:text-4xl theme-text tracking-tight mb-3">
             KVKK Aydınlatma Metni
         </h1>
         <p class="text-sm theme-text-sec leading-relaxed mb-10">
-            6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") m.10 uyarınca, veri sorumlusu sıfatıyla kişisel verilerinizi nasıl işlediğimiz konusunda sizi bilgilendirmek isteriz.
+            6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") m.10 uyarınca, veri sorumlusu sıfatıyla kişisel verilerinizi nasıl işlediğimiz, sakladığımız ve aktardığımız konusunda sizi bilgilendirmek isteriz.
         </p>
 
         <div class="space-y-8">
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">1. Veri Sorumlusu</h2>
-                <p class="text-sm theme-text-sec leading-relaxed">
-                    Kişisel verileriniz, veri sorumlusu sıfatıyla
-                    <span class="todo-placeholder">[ŞİRKET UNVANI]</span>
-                    ("Şirket" olarak anılacaktır) tarafından işlenmektedir.
-                    Adres: <span class="todo-placeholder">[AÇIK ADRES]</span> &nbsp;|&nbsp;
-                    E-posta: <span class="todo-placeholder">[E-POSTA]</span> &nbsp;|&nbsp;
-                    Telefon: <span class="todo-placeholder">[TELEFON]</span>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">
+                    Kişisel verileriniz, 6698 sayılı KVKK uyarınca veri sorumlusu sıfatıyla <strong class="theme-text">ASN Özel Forklift Servis ve İstif Makinaları Bakım Onarım Hizmetleri</strong> ("ASN Özel Forklift Servis") tarafından aşağıda açıklanan kapsamda işlenmektedir.
                 </p>
+                <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1">
+                    <li><strong class="theme-text">Hizmet Bölgesi &amp; Merkez:</strong> İstanbul ve Marmara Bölgesi Sanayi Bölgeleri (OSB, Depo, Lojistik ve Fabrika Sahaları — Gezici Mobil Servis Filosu &amp; Merkez Atölye)</li>
+                    <li><strong class="theme-text">Kurumsal E-posta:</strong> <a href="mailto:servis@asnforkliftservis.com.tr" class="underline theme-accent-text">servis@asnforkliftservis.com.tr</a> (alternatif hızlı iletişim: <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a>)</li>
+                    <li><strong class="theme-text">7/24 Acil Hat / Telefon:</strong> <a href="tel:+905339540425" class="underline theme-accent-text font-mono">0533 954 04 25</a></li>
+                </ul>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">2. İşlenen Kişisel Veriler</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">Web sitemizdeki formlar veya iletişim kanalları aracılığıyla bize ilettiğiniz aşağıdaki veriler işlenebilir:</p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li>Ad soyad ve yetkili/firma adı</li>
-                    <li>Telefon numarası ve e-posta adresi</li>
-                    <li>Talep konusuna ilişkin bilgiler: makina tipi, marka, konum notu, arıza ve bakım talebi içerikleri</li>
-                    <li>Form gönderim zamanı ve oluşturulan talep referans numarası</li>
+                    <li>Kimlik ve iletişim verileri: ad soyad, yetkili/firma adı, telefon numarası ve e-posta adresi</li>
+                    <li>Talep ve saha verileri: forklift/makina tipi, marka-model, konum notu, arıza kategorisi ve bakım talebi içerikleri</li>
+                    <li>İşlem ve teknik kayıt verileri: form gönderim zamanı, talep referans numarası, yazılı iş emri ve fatura/garanti kayıtları</li>
+                    <li>Açık rıza hâlinde çerez ve analitik kullanım verileri (ziyaret edilen sayfalar, cihaz/tarayıcı tipi, yaklaşık bölge)</li>
                 </ul>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">3. İşleme Amaçları</h2>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li>Arıza, servis ve teklif taleplerinizi almak, değerlendirmek ve size dönüş yapmak</li>
-                    <li>Servis iş emri oluşturmak, randevu ve hizmet planlaması yapmak</li>
-                    <li>Talebinize uygun hizmet ve fiyat bilgisi sunmak</li>
-                    <li>Servis sonrası memnuniyet, garanti ve yasal yükümlülük süreçlerini yürütmek</li>
-                    <li>Yasal zorunluluklardan doğan kayıt ve bilgilendirme yükümlülüklerini yerine getirmek</li>
+                    <li>Arıza, mobil servis, periyodik bakım ve teklif taleplerinizi almak, değerlendirmek ve size dönüş yapmak</li>
+                    <li>Servis iş emri oluşturmak, saha müdahale randevusu ve atölye planlaması yapmak</li>
+                    <li>Talebinize uygun orijinal/muadil yedek parça ve işçilik teklifi sunmak</li>
+                    <li>Servis sonrası <a href="garanti.html" class="underline theme-accent-text">garanti koşulları</a> kapsamındaki yükümlülükleri ve müşteri memnuniyetini yürütmek</li>
+                    <li>6102 sayılı Türk Ticaret Kanunu ve 213 sayılı Vergi Usul Kanunu başta olmak üzere yasal kayıt ve muhasebe yükümlülüklerini yerine getirmek</li>
                 </ul>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">4. Hukuki Sebep</h2>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Kişisel verileriniz, KVKK m.5'te öngörülen hukuki sebeplere dayanarak; bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması (m.5/2-f.c.), temel hak ve özgürlüklerinize zarar vermemek kaydıyla veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması (m.5/2-f.ı) ve ilgili kişinin açık rızası (m.5/1) hukuki sebepleriyle, KVKK m.4'te belirtilen genel ilkelere uygun şekilde işlenmektedir.
+                    Kişisel verileriniz, KVKK m.4'teki genel ilkelere uygun olarak ve KVKK m.5'te öngörülen hukuki sebeplere dayanılarak; bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması (m.5/2-c), veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması (m.5/2-ç), ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla veri sorumlusunun meşru menfaatleri için zorunlu olması (m.5/2-f) ve gerekli hâllerde açık rızanızın bulunması (m.5/1 ile m.9) hukuki sebepleriyle işlenmektedir.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">5. Saklama Süresi</h2>
-                <p class="text-sm theme-text-sec leading-relaxed">
-                    Kişisel verileriniz, işleme amaçlarının gerektirdiği süre ve ilgili mevzuatta öngörülen zorunlu saklama süreleri boyunca saklanır. Talep ve iş emri kayıtları için öngörülen saklama süresi:
-                    <span class="todo-placeholder">[VERİ SAKLAMA SÜRESİ]</span>. Süre sonunda verileriniz silinir, yok edilir veya anonim hâle getirilir.
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">
+                    Kişisel verileriniz, işleme amaçlarının gerektirdiği süre ve ilgili mevzuatta öngörülen zorunlu saklama süreleri boyunca muhafaza edilir:
+                </p>
+                <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
+                    <li><strong class="theme-text">İletişim ve servis talep kayıtları:</strong> <strong class="theme-accent-text">3 yıl</strong></li>
+                    <li><strong class="theme-text">Fatura, iş emri, garanti ve ticari defter kayıtları:</strong> 6102 sayılı TTK ve 213 sayılı VUK uyarınca <strong class="theme-accent-text">10 yıl</strong></li>
+                    <li><strong class="theme-text">Analitik ve çerez verileri:</strong> <strong class="theme-accent-text">26 ay</strong></li>
+                </ul>
+                <p class="text-sm theme-text-sec leading-relaxed mt-3">
+                    Belirtilen saklama sürelerinin sona ermesi hâlinde kişisel verileriniz KVKK m.7 ve ilgili yönetmelik uyarınca silinir, yok edilir veya anonim hâle getirilir.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
-                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">6. Verilerin Aktarılması</h2>
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">6. Verilerin Aktarılması &amp; Yurt Dışı Altyapı Sağlayıcıları (KVKK m.8–m.10)</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">
-                    Kişisel verileriniz; KVKK m.8 ve m.9'daki koşullara uygun olarak ve yalnızca talepinizin alınması ile hizmetin ifası amacıyla aşağıdaki altyapı sağlayıcılarına aktarılabilir:
+                    Kişisel verileriniz; KVKK m.8 ve m.9 hükümlerine uygun olarak, yalnızca talebinizin alınması, iletişim kurulması ve teknik servis hizmetinin ifası amacıyla sınırlı olmak üzere aşağıdaki altyapı ve hizmet sağlayıcılarıyla paylaşılabilir:
                 </p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li><strong class="theme-text">FormSubmit.co</strong> — web formu içeriklerinin e-posta yoluyla tarafımıza iletilmesi</li>
-                    <li><strong class="theme-text">Netlify, Inc.</strong> — web sitemizin barındırılması ve Netlify Forms üzerinden form kayıtlarının tutulması</li>
-                    <li><strong class="theme-text">WhatsApp (Meta Platforms, Inc.)</strong> — tercih etmeniz hâlinde talep içeriklerinin WhatsApp iletişimi kapsamında işlenmesi</li>
-                    <li><strong class="theme-text">Google Maps (Google LLC)</strong> — konum/tarif hizmetlerinin sunulması ve adres bilgilerinin çözümlenmesi</li>
+                    <li><strong class="theme-text">Form Altyapısı (Netlify Forms / FormSubmit):</strong> Web sitemizin barındırılması, arıza/teklif formlarının güvenli biçimde alınması ve servis bildirimlerinin tarafımıza iletilmesi.</li>
+                    <li><strong class="theme-text">E-Posta Altyapısı (Google Workspace / Gmail — Google LLC):</strong> <span class="font-mono text-xs">servis@asnforkliftservis.com.tr</span> ve alternatif hızlı iletişim hattı <span class="font-mono text-xs">aokty0@gmail.com</span> üzerinden kurumsal e-posta yazışmalarının yürütülmesi.</li>
+                    <li><strong class="theme-text">Web Yazı Tipi ve Analitik Servisleri (Google Fonts &amp; Google Analytics 4 — Google LLC):</strong> Sayfa tipografisinin sunulması ile açık rıza verilmesi durumunda site kullanım ve trafik istatistiklerinin ölçülmesi.</li>
+                    <li><strong class="theme-text">Hızlı Mesajlaşma ve Konum Servisleri (WhatsApp — Meta Platforms, Inc. &amp; Google Maps — Google LLC):</strong> Tercih etmeniz hâlinde saha konumunun paylaşılması ve WhatsApp üzerinden hızlı destek sağlanması.</li>
                 </ul>
                 <p class="text-sm theme-text-sec leading-relaxed mt-3">
-                    Bu sağlayıcılar verileri kendi sunucularında (yurt dışı dâhil) işleyebilir. Web sitemizdeki formlarda yer alan onay kutusunu işaretleyerek, talebinizin alınması ve hizmetin ifası amacıyla verilerinizin bu hizmet sağlayıcılar aracılığıyla yurt dışına aktarılmasına KVKK m.9 kapsamında açık rıza vermiş olursunuz; onay vermemeniz hâlinde formunuz tarafımıza ulaşmaz ve yurt dışına aktarım yapılmaz.
+                    Yukarıda belirtilen bulut ve iletişim altyapı sağlayıcılarının sunucuları yurt dışında (AB/ABD dâhil) bulunabilmektedir. Web sitemizdeki iletişim/servis formlarında yer alan KVKK onay kutusunu işaretleyerek veya çerez bildiriminde analitik çerezleri onaylayarak verilerinizin yalnızca ilgili hizmetin sunulması amacıyla bu sağlayıcılar aracılığıyla yurt dışına aktarılmasına KVKK m.9 kapsamında açık rıza vermiş olursunuz. Yurt dışı aktarımına açık rıza vermek istememeniz hâlinde web formlarını kullanmadan doğrudan <a href="tel:+905339540425" class="underline theme-accent-text font-mono">0533 954 04 25</a> numaralı hattımızdan bize ulaşabilirsiniz.
                 </p>
             </section>
 
@@ -179,9 +238,9 @@
                     <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
                     <li>İşlenmişse buna ilişkin bilgi talep etme</li>
                     <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
-                    <li>Yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme</li>
+                    <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
                     <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
-                    <li>KVKK m.7 çerçevesinde silinmesini/yok edilmesini isteme</li>
+                    <li>KVKK m.7 çerçevesinde silinmesini veya yok edilmesini isteme</li>
                     <li>Düzeltme, silme ve yok etme işlemlerinin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
                     <li>Münhasıran otomatik sistemler ile analiz edilmesi nedeniyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
                     <li>Kanuna aykırı işleme sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
@@ -194,53 +253,57 @@
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">8. Başvuru Yöntemi</h2>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Haklarınıza ilişkin taleplerinizi, kimliğinizi doğrulayıcı bilgilerle birlikte aşağıdaki kanallardan bize iletebilirsiniz. E-posta ile yapacağınız başvurularda konu alanına "KVKK Başvurusu" yazmanız başvurunuzun hızlandırılmasını sağlar. Başvurunuzu, aşağıda belirtilen başvuru e-posta adresine göndererek bize ulaştırabilirsiniz; bu adres kurumsal olarak yapılandırılana kadar başvurular, sitemizde yayımlanan <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a> adresi üzerinden de kabul edilmektedir. Başvurular en kısa sürede ve en geç otuz gün içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu'nca belirlenen tarifedeki ücret alınabilir.
+                    KVKK m.11 kapsamındaki taleplerinizi, kimliğinizi doğrulayıcı bilgilerle birlikte aşağıdaki iletişim kanallarından bize iletebilirsiniz. E-posta başvurularında konu satırına <strong class="theme-text">"KVKK Başvurusu"</strong> yazmanız değerlendirme sürecini hızlandırır. Başvurular talebin niteliğine göre en kısa sürede ve en geç otuz gün içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu'nca belirlenen tarifedeki ücret uygulanabilir.
                 </p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5 mt-3">
-                    <li>Başvuru e-postası: <span class="todo-placeholder">[E-POSTA]</span></li>
-                    <li>Telefon: <span class="todo-placeholder">[TELEFON]</span></li>
-                    <li>Adres: <span class="todo-placeholder">[AÇIK ADRES]</span></li>
+                    <li><strong class="theme-text">Başvuru E-postası:</strong> <a href="mailto:servis@asnforkliftservis.com.tr" class="underline theme-accent-text">servis@asnforkliftservis.com.tr</a> (Alternatif hızlı iletişim: <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a>)</li>
+                    <li><strong class="theme-text">Telefon (7/24 Acil Hat):</strong> <a href="tel:+905339540425" class="underline theme-accent-text font-mono">0533 954 04 25</a></li>
+                    <li><strong class="theme-text">Hizmet Bölgesi &amp; Merkez:</strong> İstanbul ve Marmara Bölgesi Sanayi Bölgeleri (OSB, Depo, Lojistik ve Fabrika Sahaları — Gezici Mobil Servis Filosu &amp; Merkez Atölye)</li>
+                    <li><strong class="theme-text">Çalışma Saatleri:</strong> Planlı Bakım &amp; Atölye: Pazartesi–Cumartesi 08:30–18:30 | Mobil Acil Arıza Müdahale: 7/24 Kesintisiz</li>
                 </ul>
             </section>
 
-            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8" id="ceriz-politikasi">
-                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">9. Çerezler ve Analitik (Çerez Politikası)</h2>
+            <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8" id="cerez-politikasi">
+                <span id="ceriz-politikasi" aria-hidden="true"></span>
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">9. Çerezler, Yazı Tipleri ve Analitik (Çerez Politikası)</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">
-                    Sitemiz, ziyaretçilerimize temel işlevleri sunmak için gerekli olan teknik çerezler dışında, yalnızca ölçüm ve analiz hizmeti etkinleştirildiğinde çerez kullanır.
+                    Web sitemizde temel kullanıcı deneyimini sağlamak amacıyla yerel tarayıcı tercih depolaması, web yazı tipi servisi (Google Fonts) ve yalnızca açık rızanız hâlinde analitik ölçüm araçları kullanılmaktadır:
                 </p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5 mb-3">
-                    <li><strong class="theme-text">Analitik çerezler (Google Analytics / GA4):</strong> GA4 şu anda sitemizde etkin değildir; Google Analytics etkinleştirildiğinde site trafiğini ölçmek için Google Analytics çerezleri kullanılacaktır. Bu çerezler; ziyaret edilen sayfalar, yaklaşık konum (ülke/şehir düzeyinde) ve cihaz/tarayıcı bilgilerini içerebilir ve veriler Google LLC tarafından ABD dâhil yurt dışındaki sunucularda işlenebilir.</li>
-                    <li><strong class="theme-text">Tercih çerezleri:</strong> Açık/koyu tema ve çerez onay tercihiniz tarayıcınızın yerel deposunda (localStorage) tutulur; bu veriler sunucumuza gönderilmez.</li>
+                    <li><strong class="theme-text">Tercih ve oturum depolaması:</strong> Açık/koyu tema (<span class="font-mono text-xs">asn_theme</span>) ve çerez onay tercihiniz tarayıcınızın yerel deposunda (<span class="font-mono text-xs">localStorage</span>) tutulur; bu veriler sunucularımıza gönderilmez.</li>
+                    <li><strong class="theme-text">Google Fonts:</strong> Sayfa yazı tiplerinin yüklenmesi sırasında IP adresiniz ve tarayıcı üstbilgisi teknik zorunluluk gereği Google LLC sunucularıyla paylaşılır.</li>
+                    <li><strong class="theme-text">Analitik çerezler (Google Analytics 4):</strong> Yalnızca çerez onay bildiriminde kabul etmeniz hâlinde etkinleşir; ziyaret edilen sayfalar, yaklaşık konum (ülke/şehir düzeyinde) ve cihaz/tarayıcı verilerini işleyebilir. Google Analytics 4 verileri <strong class="theme-text">26 ay</strong> saklanır.</li>
                 </ul>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    GA4 etkinleştirildiğinde sitede gösterilecek bildirim çubuğu üzerinden çerez tercihlerinizi kabul edebilir veya reddedebilirsiniz. Tercihinizi istediğiniz zaman tarayıcınızın çerez ayarlarını temizleyerek veya <span class="todo-placeholder">[E-POSTA]</span> adresine e-posta göndererek değiştirebilirsiniz; analitik çerezler onay verdiğiniz sürece etkin olur.
+                    Çerez tercihlerinizi tarayıcı ayarlarınızdan silebilir veya <a href="mailto:servis@asnforkliftservis.com.tr" class="underline theme-accent-text">servis@asnforkliftservis.com.tr</a> adresine e-posta göndererek analitik onayınızı her zaman geri alabilirsiniz.
                 </p>
             </section>
 
         </div>
 
-        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 16.11.2026</p>
+        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 17.11.2026</p>
     </main>
 
     <!-- Sade footer -->
-    <footer class="bg-[#C8102E] text-zinc-300 border-t border-white/10 mt-6">
+    <footer class="bg-brand-redDark text-zinc-100 border-t border-white/15 mt-6">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <p>&copy; 2026 Toyo Forklift Servis. Tüm Hakları Saklıdır.</p>
+            <p>&copy; 2026 ASN Özel Forklift Servis. Tüm Hakları Saklıdır.</p>
             <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1" aria-label="Yasal bağlantılar">
+                <a href="kvkk.html" class="underline hover:text-white">KVKK</a>
                 <a href="garanti.html" class="underline hover:text-white">Garanti Koşulları</a>
-                <a href="hakkinda.html" class="underline hover:text-white">Hakkımızda &amp; Yasal Bildirimler</a>
+                <a href="hakkinda.html" class="underline hover:text-white">Hakkımızda</a>
                 <a href="index.html" class="underline hover:text-white">Anasayfa</a>
             </nav>
         </div>
         <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-6">
-            <p class="text-xs text-zinc-300/90 leading-relaxed">
-                Toyo Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
+            <p class="text-xs text-white/90 leading-relaxed">
+                ASN Özel Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
             </p>
         </div>
     </footer>
 
     <script>
-        /* Tema sistemi: index.html ile aynı davranış ve aynı localStorage anahtarı (toyo_theme) */
+        /* Tema sistemi: asn_theme birincil anahtar + toyo_theme geriye dönük uyumluluk */
         function syncThemeUI() {
             const isDark = document.documentElement.classList.contains('dark');
             document.querySelectorAll('.theme-icon-moon-el').forEach(el => {
@@ -261,10 +324,16 @@
             const willBeDark = !htmlEl.classList.contains('dark');
             if (willBeDark) {
                 htmlEl.classList.add('dark');
-                try { localStorage.setItem('toyo_theme', 'dark'); } catch (e) {}
+                try {
+                    localStorage.setItem('asn_theme', 'dark');
+                    localStorage.setItem('toyo_theme', 'dark');
+                } catch (e) {}
             } else {
                 htmlEl.classList.remove('dark');
-                try { localStorage.setItem('toyo_theme', 'light'); } catch (e) {}
+                try {
+                    localStorage.setItem('asn_theme', 'light');
+                    localStorage.setItem('toyo_theme', 'light');
+                } catch (e) {}
             }
             syncThemeUI();
         }

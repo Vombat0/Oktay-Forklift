@@ -1,189 +1,341 @@
 /* =====================================================================
-   TOYO FORKLIFT SERVİS — tek CSS girdi dosyası (B1)
+   ASN ÖZEL FORKLİFT SERVİS — tek CSS girdi dosyası
    Tailwind CSS v3.4.19 ile derlenir: npm run build:css
-   Eskiden index.html içindeki inline <style> bloğunun tamamı +
-   3 alt sayfanın (kvkk/garanti/hakkinda) birebir aynı stil bloğu
-   burada tekilleştirilmiştir. Sıra korunur: Tailwind katmanlarından
-   sonra düz CSS gelir (esnek olmayan kademe = orijinal davranış).
+
+   Tasarım sistemi: Endüstriyel Kehribar-Turuncu & Derin Arduvaz/Lacivert.
+   Tema değişkenleri :root (açık) ve html.dark (koyu) içinde tanımlıdır.
+
+   B7: .theme-* yardımcıları artık @layer components içindedir ve
+   !important KULLANMAZ. Böylece Tailwind yardımcı sınıfları
+   (peer-checked, border-emerald-500, border-red-500, bg-, text- vb.)
+   tema sınıflarını ezebilir.
    ===================================================================== */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* GARANTİLİ AYDINLIK / KARANLIK MOD CSS DEĞİŞKENLERİ */
-        :root {
-            --bg-body: #F5F6F7;
-            --bg-surface: #ECEEF0;
-            --bg-card: #ffffff;
-            --bg-elevated: #F7F8F9;
-            --text-primary: #15181B;
-            --text-secondary: #4C5257;
-            --text-muted: #71787E;
-            --border-color: #DCDFE2;
-            --border-strong: #BFC4C9;
-            --brand-primary: #C8102E;
-            --brand-primary-hover: #A00D25;
-            --brand-primary-text: #ffffff;
-            --brand-accent: #C8102E;
-            --logo-gear: #C8102E;
-            --logo-cutout: #ffffff;
-            --logo-forklift: #9BA1A6;
-            --logo-roof: #C8102E;
-            --header-bg: rgba(255, 255, 255, 0.95);
-            --grid-line: rgba(200, 16, 46, 0.05);
-            --card-shadow: 0 12px 32px -8px rgba(21, 24, 27, 0.10), 0 4px 12px -2px rgba(21, 24, 27, 0.05);
-        }
+/* ---------------------------------------------------------------------
+   TEMA DEĞİŞKENLERİ
+   Kontrast (WCAG AA): açık tema ana/ikincil/muted metin #F8FAFC, #F1F5F9
+   ve #FFFFFF üzerinde >= 6.9:1; koyu tema metinleri >= 5.7:1.
+   --------------------------------------------------------------------- */
+:root {
+    --bg-primary: #F8FAFC;
+    --bg-body: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-elevated: #F1F5F9;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #475569;
+    --border-color: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --brand-primary: #C2410C;
+    --brand-primary-hover: #9A3412;
+    --brand-primary-text: #FFFFFF;
+    --brand-accent: #C2410C;
+    --brand-amber: #F59E0B;
+    --brand-navy: #0F172A;
+    --logo-gear: #C2410C;
+    --logo-cutout: #FFFFFF;
+    --logo-forklift: #334155;
+    --logo-roof: #F59E0B;
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --grid-line: rgba(15, 23, 42, 0.05);
+    --card-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+    --focus-ring: #C2410C;
+}
 
-        html.dark {
-            --bg-body: #0F1114;
-            --bg-surface: #171A1E;
-            --bg-card: #1B1F23;
-            --bg-elevated: #22272B;
-            --text-primary: #EDEFF1;
-            --text-secondary: #BFC4C9;
-            --text-muted: #8A9197;
-            --border-color: #2E3439;
-            --border-strong: #434A50;
-            --brand-primary: #FF4D5E;
-            --brand-primary-hover: #FF7A87;
-            --brand-primary-text: #0F1114;
-            --brand-accent: #D8DCE0;
-            --logo-gear: #FF4D5E;
-            --logo-cutout: #1B1F23;
-            --logo-forklift: #D8DCE0;
-            --logo-roof: #FF4D5E;
-            --header-bg: rgba(15, 17, 20, 0.95);
-            --grid-line: rgba(255, 77, 94, 0.07);
-            --card-shadow: 0 14px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(67, 74, 80, 0.7);
-        }
+html.dark {
+    --bg-primary: #090D16;
+    --bg-body: #090D16;
+    --bg-surface: #111827;
+    --bg-card: #111827;
+    --bg-elevated: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --border-color: #1E293B;
+    --border-strong: #334155;
+    --brand-primary: #F59E0B;
+    --brand-primary-hover: #FBBF24;
+    --brand-primary-text: #090D16;
+    --brand-accent: #FBBF24;
+    --brand-amber: #F59E0B;
+    --brand-navy: #090D16;
+    --logo-gear: #F59E0B;
+    --logo-cutout: #111827;
+    --logo-forklift: #CBD5E1;
+    --logo-roof: #FBBF24;
+    --header-bg: rgba(9, 13, 22, 0.95);
+    --grid-line: rgba(245, 158, 11, 0.07);
+    --card-shadow: 0 14px 36px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(59, 74, 99, 0.6);
+    --focus-ring: #FBBF24;
+}
 
-        body {
-            background-color: var(--bg-body) !important;
-            color: var(--text-primary) !important;
-            transition: background-color 0.25s ease, color 0.25s ease;
-        }
+/* Gövde zemini: tek geçerli !important; Tailwind sınıfı olmayan
+   sayfa zeminini garanti eder (tema geçişi flaşını önler). */
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
 
-        .theme-body { background-color: var(--bg-body) !important; color: var(--text-primary) !important; }
-        .theme-surface { background-color: var(--bg-surface) !important; color: var(--text-primary) !important; }
-        .theme-card { background-color: var(--bg-card) !important; color: var(--text-primary) !important; border-color: var(--border-color) !important; }
-        .theme-elevated { background-color: var(--bg-elevated) !important; border-color: var(--border-color) !important; }
-        .theme-text { color: var(--text-primary) !important; }
-        .theme-text-sec { color: var(--text-secondary) !important; }
-        .theme-muted { color: var(--text-muted) !important; }
-        .theme-border { border-color: var(--border-color) !important; }
-        .theme-accent-text { color: var(--brand-accent) !important; }
-        .theme-shadow { box-shadow: var(--card-shadow) !important; }
+/* ---------------------------------------------------------------------
+   TEMA YARDIMCILARI (!important YOK — Tailwind yardımcıları ezebilir)
+   --------------------------------------------------------------------- */
+@layer components {
+    .theme-body { background-color: var(--bg-body); color: var(--text-primary); }
+    .theme-surface { background-color: var(--bg-surface); color: var(--text-primary); }
+    .theme-card { background-color: var(--bg-card); color: var(--text-primary); border-color: var(--border-color); }
+    .theme-elevated { background-color: var(--bg-elevated); border-color: var(--border-color); }
+    .theme-text { color: var(--text-primary); }
+    .theme-text-sec { color: var(--text-secondary); }
+    .theme-muted { color: var(--text-muted); }
+    .theme-border { border-color: var(--border-color); }
+    .theme-accent-text { color: var(--brand-accent); }
+    .theme-shadow { box-shadow: var(--card-shadow); }
 
-        .theme-btn-primary {
-            background-color: var(--brand-primary) !important;
-            color: var(--brand-primary-text) !important;
-            transition: all 0.2s ease;
-        }
-        .theme-btn-primary:hover {
-            background-color: var(--brand-primary-hover) !important;
-        }
+    .theme-btn-primary {
+        background-color: var(--brand-primary);
+        color: var(--brand-primary-text);
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .theme-btn-primary:hover {
+        background-color: var(--brand-primary-hover);
+    }
 
-        .theme-input {
-            background-color: var(--bg-elevated) !important;
-            color: var(--text-primary) !important;
-            border-color: var(--border-color) !important;
-        }
-        .theme-input::placeholder {
-            color: var(--text-muted) !important;
-        }
-        .theme-input:focus {
-            outline: 2px solid var(--brand-primary) !important;
-            outline-offset: 2px;
-        }
+    .theme-input {
+        background-color: var(--bg-elevated);
+        color: var(--text-primary);
+        border-color: var(--border-color);
+    }
+    .theme-input::placeholder {
+        color: var(--text-muted);
+    }
+    .theme-input:focus {
+        outline: 2px solid var(--brand-primary);
+        outline-offset: 2px;
+    }
 
-        /* Vektörel Logo Dinamik Renk Sınıfları */
-        .svg-gear { fill: var(--logo-gear); transition: fill 0.25s ease; }
-        .svg-cutout { fill: var(--logo-cutout); transition: fill 0.25s ease; }
-        .svg-forklift { fill: var(--logo-forklift); transition: fill 0.25s ease; }
-        .svg-forklift-stroke { stroke: var(--logo-forklift); transition: stroke 0.25s ease; }
-        .svg-roof { fill: var(--logo-roof); transition: fill 0.25s ease; }
+    .enterprise-header {
+        background-color: var(--header-bg);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
 
-        /* Endüstriyel Teknik Izgara Deseni */
-        .bg-technical-grid {
-            background-size: 32px 32px;
-            background-image: 
-                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-        }
+    /* Vektörel logo dinamik renk sınıfları */
+    .svg-gear { fill: var(--logo-gear); transition: fill 0.25s ease; }
+    .svg-cutout { fill: var(--logo-cutout); transition: fill 0.25s ease; }
+    .svg-forklift { fill: var(--logo-forklift); transition: fill 0.25s ease; }
+    .svg-forklift-stroke { stroke: var(--logo-forklift); transition: stroke 0.25s ease; }
+    .svg-roof { fill: var(--logo-roof); transition: fill 0.25s ease; }
 
-        .enterprise-header {
-            background-color: var(--header-bg) !important;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-        }
+    /* Endüstriyel teknik ızgara deseni */
+    .bg-technical-grid {
+        background-size: 32px 32px;
+        background-image:
+            linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    }
 
-        /* Mobil sabit CTA barı: içeriğin altında kalmasın (lg altında) */
-        @media (max-width: 1023px) {
-            body.page-home {
-                padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
-            }
-        }
+    /* Radyo kartları: seçili durum belirgin çerçeve + zemin + gölge.
+       Tailwind peer-checked:* yardımcıları gerekirse bunu özelleştirir. */
+    label:has(input[type="radio"]:checked) > div {
+        border-color: var(--brand-primary);
+        background-color: color-mix(in srgb, var(--brand-primary) 12%, transparent);
+        box-shadow: 0 0 0 1px var(--brand-primary), 0 6px 16px -6px color-mix(in srgb, var(--brand-primary) 55%, transparent);
+    }
+    label:has(input[type="radio"]:focus-visible) > div {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 
-        /* Klavye odak halkası (erişilebilirlik): buton, bağlantı ve tüm form
-           alanlarında klavye ile gezinirken 2px marka rengi outline + 2px offset */
-        :focus-visible,
-        a:focus-visible, button:focus-visible,
-        input:focus-visible, select:focus-visible, textarea:focus-visible {
-            outline: 2px solid var(--brand-primary);
-            outline-offset: 2px;
-        }
+    /* Doldurulacak ek endüstriyel bileşenler (index.html'den taşındı) */
+    .asn-badge {
+        display: inline-block;
+        margin-top: 0.25rem;
+        padding: 0.2rem 0.45rem;
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+        line-height: 1;
+    }
 
-        /* Doldurulacak Yer Tutucular (TODO içerikleri) */
-        .todo-placeholder {
-            display: inline-block;
-            font-size: 0.68rem;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            background: rgba(234, 179, 8, 0.10);
-            border-bottom: 2px dashed var(--border-strong);
-            padding: 1px 6px;
-            border-radius: 4px;
-        }
-        html.dark .todo-placeholder {
-            background: rgba(234, 179, 8, 0.12);
-            color: var(--text-secondary);
-        }
+    /* Operasyonel durum radyo kartları: kesin ve yüksek kontrastlı seçili durum */
+    .urgency-card {
+        position: relative;
+        border-width: 2px;
+    }
+    .urgency-card .urgency-check {
+        display: none;
+        margin-left: auto;
+        font-size: 10px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        padding: 0.1rem 0.35rem;
+        border-radius: 0.25rem;
+    }
+    .urgency-radio-urgent:checked + .urgency-card,
+    .urgency-card.is-selected-urgent {
+        border-color: #C2410C;
+        background-color: rgba(194, 65, 12, 0.11);
+        color: #9A3412;
+        box-shadow: 0 0 0 1px #C2410C, 0 8px 18px -6px rgba(194, 65, 12, 0.35);
+    }
+    html.dark .urgency-radio-urgent:checked + .urgency-card,
+    html.dark .urgency-card.is-selected-urgent {
+        border-color: #F59E0B;
+        background-color: rgba(245, 158, 11, 0.16);
+        color: #FBBF24;
+        box-shadow: 0 0 0 1px #F59E0B, 0 8px 18px -6px rgba(245, 158, 11, 0.32);
+    }
+    .urgency-radio-planned:checked + .urgency-card,
+    .urgency-card.is-selected-planned {
+        border-color: #0F172A;
+        background-color: rgba(15, 23, 42, 0.08);
+        color: #0F172A;
+        box-shadow: 0 0 0 1px #0F172A, 0 8px 18px -6px rgba(15, 23, 42, 0.25);
+    }
+    html.dark .urgency-radio-planned:checked + .urgency-card,
+    html.dark .urgency-card.is-selected-planned {
+        border-color: #94A3B8;
+        background-color: rgba(148, 163, 184, 0.14);
+        color: #F8FAFC;
+        box-shadow: 0 0 0 1px #94A3B8, 0 8px 18px -6px rgba(15, 23, 42, 0.45);
+    }
+    .urgency-radio-urgent:checked + .urgency-card .urgency-check,
+    .urgency-card.is-selected-urgent .urgency-check {
+        display: inline-block;
+        background-color: var(--brand-primary);
+        color: var(--brand-primary-text);
+    }
+    .urgency-radio-planned:checked + .urgency-card .urgency-check,
+    .urgency-card.is-selected-planned .urgency-check {
+        display: inline-block;
+        background-color: #0F172A;
+        color: #FFFFFF;
+    }
+    html.dark .urgency-radio-planned:checked + .urgency-card .urgency-check,
+    html.dark .urgency-card.is-selected-planned .urgency-check {
+        background-color: #CBD5E1;
+        color: #090D16;
+    }
 
-        /* B3: Referans vaka kartlarında fotoğraf yer tutucu (tema uyumlu) */
-        .img-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            min-height: 168px;
-            padding: 16px;
-            text-align: center;
-            background-color: var(--bg-elevated);
-            border: 2px dashed var(--border-strong);
-            border-radius: 12px;
-            color: var(--text-secondary);
-        }
-        .img-placeholder svg {
-            width: 30px;
-            height: 30px;
-            color: var(--text-muted);
-        }
-        .img-placeholder span {
-            /* İstisna: yer tutucu etiketi 11px kalabilir (B4 mikro metin kuralı) */
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            line-height: 1.5;
-        }
+    /* Kurumsal paket kartları vurgusu */
+    .package-card-featured {
+        border-width: 2px;
+        border-color: var(--brand-primary);
+        box-shadow: 0 18px 40px -12px rgba(194, 65, 12, 0.25);
+    }
+    html.dark .package-card-featured {
+        box-shadow: 0 18px 40px -12px rgba(245, 158, 11, 0.22);
+    }
+    .case-diagram {
+        min-height: 156px;
+        background-color: var(--bg-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        padding: 0.875rem;
+    }
+    .osb-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.65rem;
+        border-radius: 9999px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        background-color: var(--bg-elevated);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+    }
+    .policy-banner {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(245, 158, 11, 0.10));
+        border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .brand-strip-card:hover {
+        border-color: var(--brand-primary);
+        transform: translateY(-2px);
+    }
+    .service-cta-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem;
+    }
+}
 
-        /* Özel Scrollbar */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-body); }
-        ::-webkit-scrollbar-thumb { background: #9BA1A6; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
+/* ---------------------------------------------------------------------
+   ERİŞİLEBİLİRLİK & NAVİGASYON (B8, C2.8)
+   --------------------------------------------------------------------- */
+
+/* Sabit header altında kalan bölüm başlıkları (çapa navigasyonu) */
+section[id] { scroll-margin-top: 6rem; }
+html { scroll-behavior: smooth; }
+
+/* "İçeriğe geç" bağlantısı: normalde ekran dışı (sr-only), yalnızca klavye odağında sol üstte görünür */
+.skip-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    background-color: var(--brand-primary);
+    color: var(--brand-primary-text);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+}
+
+/* Klavye odak halkası */
+:focus-visible,
+a:focus-visible, button:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Mobil sabit CTA barı: içeriğin altında kalmasın (lg altında) */
+@media (max-width: 1023px) {
+    body.page-home {
+        padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+/* Özel scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #D97706; }

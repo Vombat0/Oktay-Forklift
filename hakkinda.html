@@ -3,21 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- B6: tarayici arayuzu (adres cubugu) tema rengi; koyu deger medya sorgusuyla sonraki gelir ve onu override eder -->
-    <meta name="theme-color" content="#C8102E">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1114">
-    <title>Hakkımızda &amp; Yasal Bildirimler | Toyo Forklift Servis</title>
-    <meta name="description" content="Toyo Forklift Servis hakkında: bağımsız özel servis bildirimi, marka bildirimi, hizmet kapsamı ve sorumluluk sınırına ilişkin yasal bildirimler.">
+    <meta name="theme-color" content="#C2410C">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090D16">
+    <title>Hakkımızda &amp; Yasal Bildirimler | ASN Özel Forklift Servis</title>
+    <meta name="description" content="ASN Özel Forklift Servis hakkında: İstanbul ve Marmara Bölgesi'nde tüm yaygın forklift markalarına bağımsız özel teknik servis, bakım, onarım ve yedek parça hizmetleri.">
     <meta name="robots" content="index, follow">
 
-    <!-- Favicon: ana site ile aynı data-URI SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C8102E'/%3E%3Ctext x='32' y='47' font-family='Arial, Helvetica, sans-serif' font-size='42' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+    <!-- Favicon & Apple Touch Icon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C2410C'/%3E%3Ctext x='32' y='40' font-family='Arial, Helvetica, sans-serif' font-size='22' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EASN%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <!-- TODO: yayın alan adı gelince canonical adresi güncelleyin -->
-    <link rel="canonical" href="https://ornek-alan-adi.com/hakkinda.html">
+    <link rel="canonical" href="https://asnforkliftservis.com.tr/hakkinda.html">
 
-    <!-- B1: CDN yerine yerel derlenmis Tailwind CSS (npm run build:css ile uretilir;
-         FOUC olmamasi icin head icinde erken yuklenir) -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ASN Özel Forklift Servis">
+    <meta property="og:title" content="Hakkımızda &amp; Yasal Bildirimler | ASN Özel Forklift Servis">
+    <meta property="og:description" content="ASN Özel Forklift Servis hakkında: İstanbul ve Marmara Bölgesi'nde tüm yaygın forklift markalarına bağımsız özel teknik servis, bakım, onarım ve yedek parça hizmetleri.">
+    <meta property="og:url" content="https://asnforkliftservis.com.tr/hakkinda.html">
+    <meta property="og:image" content="https://asnforkliftservis.com.tr/og-gorsel.png">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hakkımızda &amp; Yasal Bildirimler | ASN Özel Forklift Servis">
+    <meta name="twitter:description" content="ASN Özel Forklift Servis hakkında: İstanbul ve Marmara Bölgesi'nde tüm yaygın forklift markalarına bağımsız özel teknik servis, bakım, onarım ve yedek parça hizmetleri.">
+    <meta name="twitter:image" content="https://asnforkliftservis.com.tr/og-gorsel.png">
+
+    <!-- Yapısal Veri (WebPage + BreadcrumbList) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://asnforkliftservis.com.tr/hakkinda.html#webpage",
+          "url": "https://asnforkliftservis.com.tr/hakkinda.html",
+          "name": "Hakkımızda & Yasal Bildirimler | ASN Özel Forklift Servis",
+          "description": "ASN Özel Forklift Servis hakkında: İstanbul ve Marmara Bölgesi'nde tüm yaygın forklift markalarına bağımsız özel teknik servis, bakım, onarım ve yedek parça hizmetleri.",
+          "inLanguage": "tr-TR",
+          "isPartOf": {
+            "@id": "https://asnforkliftservis.com.tr/#website"
+          },
+          "about": {
+            "@id": "https://asnforkliftservis.com.tr/#business"
+          },
+          "breadcrumb": {
+            "@id": "https://asnforkliftservis.com.tr/hakkinda.html#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://asnforkliftservis.com.tr/hakkinda.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://asnforkliftservis.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Hakkımızda & Yasal Bildirimler",
+              "item": "https://asnforkliftservis.com.tr/hakkinda.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Yerel derlenmiş Tailwind CSS -->
     <link rel="stylesheet" href="assets/styles.css">
 
     <!-- Google Fonts -->
@@ -25,11 +83,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Tema flaşını önleyen erken script (index.html ile aynı localStorage anahtarı: toyo_theme) -->
+    <!-- Tema flaşını önleyen erken script (asn_theme birincil + toyo_theme fallback) -->
     <script>
         (function() {
             try {
-                var savedTheme = localStorage.getItem('toyo_theme');
+                var savedTheme = localStorage.getItem('asn_theme') || localStorage.getItem('toyo_theme');
                 if (savedTheme === 'dark') {
                     document.documentElement.classList.add('dark');
                 } else {
@@ -38,15 +96,16 @@
             } catch (e) {}
         })();
     </script>
-
 </head>
 <body class="theme-body font-sans antialiased">
+
+    <a href="#main-content" class="skip-link">İçeriğe geç</a>
 
     <!-- ÜST BAR: logo + ana sayfaya dönüş + tema butonu -->
     <header class="sticky top-0 z-50 enterprise-header border-b theme-border">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20 gap-4">
-                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="Toyo Forklift Servis Anasayfa">
+                <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="ASN Özel Forklift Servis Anasayfa">
                     <div class="w-12 h-12 flex items-center justify-center shrink-0" style="width: 48px; height: 48px;">
                         <svg viewBox="0 0 200 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path class="svg-gear" d="M84 10 H116 L122 27 A74 74 0 0 1 139 34 L155 22 L178 45 L166 61 A74 74 0 0 1 173 78 L190 84 V116 L173 122 A74 74 0 0 1 166 139 L178 155 L155 178 L139 166 A74 74 0 0 1 122 173 L116 190 H84 L78 173 A74 74 0 0 1 61 166 L45 178 L22 155 L34 139 A74 74 0 0 1 27 122 L10 116 V84 L27 78 A74 74 0 0 1 34 61 L22 45 L45 22 L61 34 A74 74 0 0 1 78 27 Z" />
@@ -70,8 +129,8 @@
                         </svg>
                     </div>
                     <div class="flex flex-col justify-center whitespace-nowrap">
-                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">TOYO</span>
-                        <span class="font-brand font-bold text-[10px] tracking-[0.22em] theme-muted uppercase mt-1 leading-none">FORKLIFT SERVİS</span>
+                        <span class="font-brand font-extrabold text-xl tracking-[0.06em] theme-accent-text leading-none">ASN</span>
+                        <span class="inline-block mt-1 px-1.5 py-0.5 rounded theme-surface border theme-border font-brand font-bold text-[9px] tracking-[0.14em] theme-muted uppercase leading-none">ÖZEL FORKLİFT SERVİS</span>
                     </div>
                 </a>
 
@@ -82,28 +141,20 @@
                     </a>
                     <button type="button" onclick="toggleSiteTheme()" data-theme-toggle aria-pressed="false" aria-label="Koyu temaya geç" title="Gece / Gündüz Modunu Değiştir" class="p-2.5 rounded-lg border theme-border theme-surface theme-text hover:opacity-80 transition-all cursor-pointer shrink-0">
                         <svg class="theme-icon-moon-el w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                        <svg class="theme-icon-sun-el w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                        <svg class="theme-icon-sun-el w-5 h-5 text-brand-red dark:text-brand-orange hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-
-        <!-- Taslak uyarı kutusu -->
-        <div class="mb-8 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
-            <p class="text-sm font-bold text-amber-600 dark:text-amber-400 flex items-center gap-2">
-                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.48 0L3.16 16.25A2 2 0 005 19z"></path></svg>
-                Bu metin taslaktır; yayına almadan önce hukuk danışmanına inceletin.
-            </p>
-        </div>
+    <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
 
         <h1 class="font-display font-extrabold text-3xl sm:text-4xl theme-text tracking-tight mb-3">
             Hakkımızda &amp; Yasal Bildirimler
         </h1>
         <p class="text-sm theme-text-sec leading-relaxed mb-10">
-            Bu sayfada işletmemizin kimliği, hizmet kapsamı ve yasal bildirimlerimiz (bağımsız servis ve marka bildirimleri ile sorumluluk sınırı) yer almaktadır.
+            Bu sayfada <strong class="theme-text">ASN Özel Forklift Servis</strong> kurumsal kimliği, hizmet bölgesi, çok markalı özel teknik servis yapısı, hizmet kapsamı ve yasal bildirimlerimiz yer almaktadır.
         </p>
 
         <div class="space-y-8">
@@ -111,93 +162,101 @@
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">1. Hakkımızda</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">
-                    <strong class="theme-text">Toyo Forklift Servis</strong>, baba-oğul ortaklığıyla faaliyet gösteren, endüstriyel forklift ve istif makinalarına uzmanlaşmış bağımsız bir özel servis işletmesidir. Dizel, akülü (elektrikli) ve LPG'li forkliftler için yerinde arıza tespiti, periyodik bakım, motor-şanzıman revizyonu, elektronik kart onarımı ve yedek parça tedariği hizmetleri sunuyoruz.
+                    <strong class="theme-text">ASN Özel Forklift Servis ve İstif Makinaları Bakım Onarım Hizmetleri</strong>, endüstriyel forklift ve depo istif makinaları alanında uzmanlaşmış bağımsız bir özel teknik servis işletmesidir. Dizel, akülü (elektrikli) ve LPG'li forkliftler için yerinde bilgisayarlı arıza tespiti, periyodik bakım, ağır motor-şanzıman revizyonu, hidrolik sistem onarımı, elektronik kart tamiri ve yedek parça tedariği hizmetleri sunuyoruz.
                 </p>
-                <p class="text-sm theme-text-sec leading-relaxed">
-                    Hizmet verdiğimiz bölge ve çalışma saatleri: <span class="todo-placeholder">[HİZMET BÖLGESİ]</span> / <span class="todo-placeholder">[ÇALIŞMA SAATLERİ]</span>. Adres: <span class="todo-placeholder">[AÇIK ADRES]</span>.
-                </p>
+                <div class="mt-4 p-4 rounded-xl theme-elevated border theme-border space-y-2 text-sm theme-text-sec">
+                    <p><strong class="theme-text">Hizmet Bölgesi &amp; Merkez:</strong> İstanbul ve Marmara Bölgesi Sanayi Bölgeleri (OSB, Depo, Lojistik ve Fabrika Sahaları — Gezici Mobil Servis Filosu &amp; Merkez Atölye)</p>
+                    <p><strong class="theme-text">Çalışma Saatleri:</strong> Planlı Bakım &amp; Atölye: Pazartesi–Cumartesi 08:30–18:30 | <span class="text-emerald-700 dark:text-emerald-400 font-semibold">Mobil Acil Arıza Müdahale: 7/24 Kesintisiz</span></p>
+                </div>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">2. Bağımsız Özel Servis Bildirimi</h2>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    <strong class="theme-text">Toyo Forklift Servis bağımsız bir özel servis işletmesidir.</strong> Hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Sitede adı geçen üçüncü taraf marka ve model adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır. Bu markalarla ticari bir bağ, yetkilendirme veya sponsorluk ilişkisi bulunmamaktadır. Üreticinin yetkili servis ağı üzerinden hizmet alması gereken durumlarda, ilgili üreticinin yetkili servisine başvurmanızı öneririz.
+                    <strong class="theme-text">ASN Özel Forklift Servis bağımsız bir özel servis işletmesidir.</strong> Hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Üretici garantisi devam eden makinalarda üreticiyi bağlayan yetkili servis işlemleri için ilgili markanın yetkili servis ağına başvurmanızı öneririz.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
-                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">3. Marka Bildirimi</h2>
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">3. Çok Markalı Hizmet &amp; Marka Bildirimi</h2>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">
+                    <strong class="theme-text">ASN Özel Forklift Servis</strong>; <strong class="theme-text">Toyota, Linde, Jungheinrich, Hyster, Still, Hangcha, Yale, Komatsu, LiuGong, TCM, Clark</strong> ve benzeri tüm yaygın forklift ve istif makinası markalarına yönelik <strong class="theme-text">bağımsız özel teknik servis</strong> hizmeti sunmaktadır.
+                </p>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">
+                    Bakım ve onarım süreçlerinde makinanın teknik gereksinimine ve işletmenizin tercihine bağlı olarak <strong class="theme-text">orijinal (OEM)</strong> ve <strong class="theme-text">A-kalite muadil</strong> yedek parça seçenekleri sunulur; kullanılacak parça türü, marka/menşei ve garanti süresi işlem öncesinde yazılı teklif ve iş emrinde açıkça belirtilir.
+                </p>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Sitemizde ve iletişim materyallerimizde geçen Linde, Toyota, Jungheinrich, Still, Hyster, Yale, TCM, Komatsu ile bunların sınırlı olmamak kaydıyla benzeri tüm marka, model ve logolar, ilgili sahiplerinin tescilli markalarıdır ve yalnızca "bu marka makinalara hizmet verildiğini" belirtmek amacıyla referans olarak kullanılmaktadır. "TOYO FORKLIFT SERVİS" işletme adı, herhangi bir forklift üreticisiyle bağlantılı olduğu şeklinde yorumlanamaz; sitede geçen bilgiler üretimci veya marka sahibi onayı içermez.
+                    Web sitemizde ve teknik belgelerimizde geçen tüm üçüncü taraf marka, model ve kontrol sistemi adları ilgili hak sahiplerinin tescilli markalarıdır; yalnızca hizmet verilen makina tiplerini tanımlamak amacıyla referans olarak kullanılmaktadır ve herhangi bir üretici onayı, yetkilendirme veya ticari ortaklık anlamı taşımaz.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">4. Hizmet Kapsamı</h2>
-                <p class="text-sm theme-text-sec leading-relaxed mb-3">Başlıca hizmetlerimiz:</p>
+                <p class="text-sm theme-text-sec leading-relaxed mb-3">Başlıca teknik servis faaliyetlerimiz:</p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li>Yerinde (mobil) arıza tespiti ve onarım — acil çağrı hattı 7/24 açıktır; saha müdahalesi bölge ve kapasiteye göre planlanır</li>
-                    <li>Periyodik bakım (motor yağı, filtre, hidrolik, şanzıman ve diferansiyel bakımları)</li>
-                    <li>Motor, şanzıman, hidrolik sistem ve elektronik kart revizyon/onarımları</li>
-                    <li>Akülü forklift akü ve şarj sistemi bakımı</li>
-                    <li>Orijinal ve OEM yedek parça tedariği ile lastik/teker değişimi</li>
+                    <li>Yerinde (mobil) arıza tespiti ve onarım — acil çağrı hattı 7/24 açıktır; İstanbul ve Marmara Bölgesi sanayi sahalarına gezici servis filosuyla müdahale edilir</li>
+                    <li>Çalışma saatine dayalı periyodik bakım (250 / 500 / 1000 / 2000 saat motor yağı, filtre, hidrolik, şanzıman ve diferansiyel bakımları)</li>
+                    <li>Motor, tork konvertörlü/otomatik şanzıman, mast/hidrolik sistem ve elektronik sürücü kartı (Curtis, Zapi, Sevcon vb.) revizyon ve onarımları</li>
+                    <li>Akülü forklift traksiyoner akü grubu, hücre ölçümü, redresör ve şarj sistemi bakımı</li>
+                    <li>Orijinal (OEM) ve A-kalite muadil yedek parça tedariği ile dolgu/havalı lastik presleme ve değişimi</li>
                 </ul>
                 <p class="text-sm theme-text-sec leading-relaxed mt-3">
-                    Her hizmet talebi, yazılı iş emrine bağlanır; onarım kapsamı, yedek parça bilgisi, süre ve garanti koşulları iş emrinde açıkça belirtilir. Sözleşmesi yapılan periyodik bakım programları dışında, öngörülemeyen arızalara ilişkin zaman garantisi verilmez.
+                    Her servis işlemi yazılı iş emrine bağlanır; onarım kapsamı, yedek parça seçimi, süre ve garanti koşulları (<strong class="theme-text">6 Ay / 500 Çalışma Saati</strong> işçilik ve <strong class="theme-text">6–12 Ay</strong> parça garantisi) iş emrinde açıkça kayıt altına alınır. Sözleşmeli periyodik bakım programları haricindeki öngörülemeyen arızalarda kesin süre bilgisi ön keşif sonrasında paylaşılır.
                 </p>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
                 <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">5. Sorumluluğun Sınırı</h2>
                 <p class="text-sm theme-text-sec leading-relaxed mb-3">
-                    Sitedeki bilgiler genel tanıtım amaçlıdır; teknik veriler, fiyatlar ve hizmet kapsamı önceden bildirilmeksizin değişebilir. Bağlayıcı koşullar, karşılıklı imzalanan iş emri ve sözleşmelerdir.
+                    Sitedeki bilgiler genel tanıtım ve teknik bilgilendirme amaçlıdır; teknik veriler, fiyatlar ve hizmet kapsamı önceden bildirilmeksizin güncellenebilir. Bağlayıcı koşullar, karşılıklı onaylanan yazılı teklif, iş emri ve bakım sözleşmeleridir.
                 </p>
                 <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5">
-                    <li>Onarımlar, iş emrinde belirtilen kapsam ve koşullarda; işçilik ve parça için yazılı garantiyle teslim edilir (bkz. <a href="garanti.html" class="underline theme-accent-text hover:opacity-80">Garanti Koşulları</a>).</li>
-                    <li>Müşteri tarafından sağlanan parça veya malzemelerin uygunluğu ve arızaya etkisinden müşteri sorumludur.</li>
-                    <li>Yanlış kullanım, aşırı yük, yetkisiz müdahale, sarf malzemesi ve normal aşınmadan kaynaklanan zararlar sorumluluğumuz dışındadır.</li>
-                    <li>Sorumluluğumuzun kapsamı ve sınırları, yürürlükteki mevzuat (ör. 6098 sayılı Türk Borçlar Kanunu ve 6502 sayılı Tüketicinin Korunması Hakkında Kanun) hükümlerine tabidir; kasıt ve ağır kusur hâllerindeki sorumluluğumuz saklıdır.</li>
-                    <li>Sitemizden erişilen üçüncü taraf sitelere ve içeriklerine ilişkin sorumluluk kabul edilmez.</li>
+                    <li>Onarımlar, iş emrinde belirtilen kapsam ve koşullarda işçilik ve parça için yazılı garantiyle teslim edilir (bkz. <a href="garanti.html" class="underline theme-accent-text hover:opacity-80">Garanti Koşulları</a>).</li>
+                    <li>Müşteri tarafından temin edilen parça veya sarf malzemelerinin teknik uygunluğu ve arızaya etkisinden müşteri sorumludur.</li>
+                    <li>Yanlış kullanım, kapasite üzeri yükleme, yetkisiz müdahale, sarf malzemesi tükenmesi ve normal mekanik aşınmadan kaynaklanan zararlar garanti ve sorumluluk kapsamı dışındadır.</li>
+                    <li>Sorumluluğumuzun kapsamı ve sınırları, 6098 sayılı Türk Borçlar Kanunu ve 6502 sayılı Tüketicinin Korunması Hakkında Kanun hükümlerine tabidir; kasıt ve ağır kusur hâllerindeki yasal sorumluluğumuz saklıdır.</li>
+                    <li>Sitemizden bağlantı verilen üçüncü taraf platformların içerik ve gizlilik uygulamalarından ilgili platformlar sorumludur.</li>
                 </ul>
             </section>
 
             <section class="theme-card rounded-2xl border theme-border theme-shadow p-6 sm:p-8">
-                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">6. Kişisel Veriler ve İletişim</h2>
+                <h2 class="font-display font-bold text-xl theme-text mb-3 theme-accent-text">6. Kurumsal İletişim &amp; Kişisel Veriler</h2>
+                <ul class="list-disc pl-5 text-sm theme-text-sec leading-relaxed space-y-1.5 mb-3">
+                    <li><strong class="theme-text">Firma Unvanı:</strong> ASN Özel Forklift Servis ve İstif Makinaları Bakım Onarım Hizmetleri</li>
+                    <li><strong class="theme-text">7/24 Acil Servis &amp; Telefon:</strong> <a href="tel:+905339540425" class="underline theme-accent-text font-mono">0533 954 04 25</a></li>
+                    <li><strong class="theme-text">Kurumsal E-Posta:</strong> <a href="mailto:servis@asnforkliftservis.com.tr" class="underline theme-accent-text">servis@asnforkliftservis.com.tr</a> (Alternatif hızlı iletişim: <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a>)</li>
+                    <li><strong class="theme-text">Hizmet Bölgesi &amp; Merkez:</strong> İstanbul ve Marmara Bölgesi Sanayi Bölgeleri (OSB, Depo, Lojistik ve Fabrika Sahaları — Gezici Mobil Servis Filosu &amp; Merkez Atölye)</li>
+                </ul>
                 <p class="text-sm theme-text-sec leading-relaxed">
-                    Kişisel verilerinizin işlenmesine ilişkin ayrıntılar için <a href="kvkk.html" class="underline theme-accent-text hover:opacity-80">KVKK Aydınlatma Metni</a>'ni inceleyebilirsiniz. Sorularınız için: <a href="tel:+905339540425" class="underline theme-accent-text">0533 954 04 25</a> | <a href="mailto:aokty0@gmail.com" class="underline theme-accent-text">aokty0@gmail.com</a>
+                    Kişisel verilerinizin işlenmesine ilişkin ayrıntılı bilgi için <a href="kvkk.html" class="underline theme-accent-text hover:opacity-80">KVKK Aydınlatma Metni</a> sayfamızı inceleyebilirsiniz.
                 </p>
             </section>
 
         </div>
 
-        <div class="mt-10 p-4 rounded-xl border-2 border-dashed border-amber-500/70 bg-amber-500/10" role="note">
-            <p class="text-sm font-bold text-amber-600 dark:text-amber-400">
-                Önemli: Bu metinler taslak niteliğindedir; marka kullanımına ve sorumluluk sınırlarına ilişkin ifadeler yayına alınmadan önce mutlaka bir hukuk danışmanına incelettirilmelidir.
-            </p>
-        </div>
-
-        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 16.11.2026</p>
+        <p class="mt-10 text-xs theme-muted font-mono">Son güncelleme: 17.11.2026</p>
     </main>
 
     <!-- Sade footer -->
-    <footer class="bg-[#C8102E] text-zinc-300 border-t border-white/10 mt-6">
+    <footer class="bg-brand-redDark text-zinc-100 border-t border-white/15 mt-6">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <p>&copy; 2026 Toyo Forklift Servis. Tüm Hakları Saklıdır.</p>
+            <p>&copy; 2026 ASN Özel Forklift Servis. Tüm Hakları Saklıdır.</p>
             <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1" aria-label="Yasal bağlantılar">
                 <a href="kvkk.html" class="underline hover:text-white">KVKK</a>
                 <a href="garanti.html" class="underline hover:text-white">Garanti Koşulları</a>
+                <a href="hakkinda.html" class="underline hover:text-white">Hakkımızda</a>
                 <a href="index.html" class="underline hover:text-white">Anasayfa</a>
             </nav>
         </div>
         <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-6">
-            <p class="text-xs text-zinc-300/90 leading-relaxed">
-                Toyo Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
+            <p class="text-xs text-white/90 leading-relaxed">
+                ASN Özel Forklift Servis bağımsız bir özel servis işletmesidir; hiçbir forklift üreticisinin, distribütörünün veya marka sahibinin yetkili servisi, temsilcisi ya da iş ortağı değildir. Adı geçen marka adları yalnızca hizmet verilen makine tiplerini tanımlamak amacıyla kullanılmıştır ve ilgili marka sahiplerinin tescilli markalarıdır.
             </p>
         </div>
     </footer>
 
     <script>
-        /* Tema sistemi: index.html ile aynı davranış ve aynı localStorage anahtarı (toyo_theme) */
+        /* Tema sistemi: asn_theme birincil anahtar + toyo_theme geriye dönük uyumluluk */
         function syncThemeUI() {
             const isDark = document.documentElement.classList.contains('dark');
             document.querySelectorAll('.theme-icon-moon-el').forEach(el => {
@@ -218,10 +277,16 @@
             const willBeDark = !htmlEl.classList.contains('dark');
             if (willBeDark) {
                 htmlEl.classList.add('dark');
-                try { localStorage.setItem('toyo_theme', 'dark'); } catch (e) {}
+                try {
+                    localStorage.setItem('asn_theme', 'dark');
+                    localStorage.setItem('toyo_theme', 'dark');
+                } catch (e) {}
             } else {
                 htmlEl.classList.remove('dark');
-                try { localStorage.setItem('toyo_theme', 'light'); } catch (e) {}
+                try {
+                    localStorage.setItem('asn_theme', 'light');
+                    localStorage.setItem('toyo_theme', 'light');
+                } catch (e) {}
             }
             syncThemeUI();
         }
