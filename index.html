@@ -2476,6 +2476,26 @@
             window.open(`https://wa.me/905339540425?text=${msg}`, '_blank', 'noopener,noreferrer');
         }
 
+        // AbortController destekli güvenli fetch: en fazla timeoutMs bekler, süre dolunca isteği iptal eder.
+        function fetchWithTimeout(url, options, timeoutMs) {
+            const opts = Object.assign({}, options || {});
+            const waitMs = Math.max(0, Number(timeoutMs) || 0);
+            let controller = null;
+            let timerId = null;
+
+            if (typeof AbortController !== 'undefined') {
+                controller = new AbortController();
+                opts.signal = controller.signal;
+                if (waitMs > 0) {
+                    timerId = setTimeout(() => controller.abort(), waitMs);
+                }
+            }
+
+            return fetch(url, opts).finally(() => {
+                if (timerId) clearTimeout(timerId);
+            });
+        }
+
         async function submitFormToCloudAndEmail(formElement, emailPayload) {
             const formData = new FormData(formElement);
             const formName = formElement ? formElement.getAttribute('name') : '';
@@ -2490,15 +2510,36 @@
                 });
             }
 
-            // Kanal 1: Netlify Forms (doğrudan statik barındırma form yakalama — await edilir)
+            // Kanal 2: FormSubmit AJAX e-posta bildirimi (aokty0@gmail.com)
+            // ARKA PLANDA başlatılır (await edilmez) ve en fazla 4000 ms yaşar.
+            // formsubmit.co sunucusu yavaş/asılı olsa bile arayüzü 1 ms bile bekletmez.
+            const submitPayload = Object.assign({}, emailPayload, {
+                _captcha: 'false',
+                _template: 'table',
+                _honey: (formElement && formElement.querySelector('[name="bot-field"]') ? formElement.querySelector('[name="bot-field"]').value : '')
+            });
+
+            const formsubmitPromise = fetchWithTimeout('https://formsubmit.co/ajax/aokty0@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(submitPayload)
+            }, 4000)
+                .then(res => (res && res.ok) ? res.json().catch(() => null) : null)
+                .then(data => Boolean(data && (data.success === true || data.success === 'true')))
+                .catch(() => false);
+
+            // Kanal 1: Netlify Forms (statik form yakalama — en fazla 2500 ms await edilir)
             let netlifyOk = false;
             try {
                 const encodedBody = new URLSearchParams(formData).toString();
-                const netlifyRes = await fetch('/', {
+                const netlifyRes = await fetchWithTimeout('/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: encodedBody
-                });
+                }, 2500);
                 netlifyOk = Boolean(
                     netlifyRes &&
                     (netlifyRes.ok || netlifyRes.status === 200 || netlifyRes.status === 201 || netlifyRes.status === 302 || netlifyRes.status === 303)
@@ -2507,33 +2548,18 @@
                 netlifyOk = false;
             }
 
-            // Kanal 2: FormSubmit AJAX e-posta bildirimi (aokty0@gmail.com)
-            let formsubmitOk = false;
-            const submitPayload = Object.assign({}, emailPayload, {
-                _captcha: 'false',
-                _template: 'table',
-                _honey: (formElement && formElement.querySelector('[name="bot-field"]') ? formElement.querySelector('[name="bot-field"]').value : '')
-            });
-
-            try {
-                const res = await fetch('https://formsubmit.co/ajax/aokty0@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(submitPayload)
-                });
-
-                if (res.ok) {
-                    const data = await res.json().catch(() => null);
-                    formsubmitOk = Boolean(data && (data.success === true || data.success === 'true'));
-                }
-            } catch (err) {
-                formsubmitOk = false;
+            // Netlify başarılıysa (canlı ortamda ~200 ms içinde true döner) anında bitir.
+            if (netlifyOk) {
+                return true;
             }
 
-            return netlifyOk || formsubmitOk;
+            // Netlify yoksa (ör. yerel dosyada test) arka plandaki e-posta için en fazla 1800 ms daha bekle.
+            const formsubmitOk = await Promise.race([
+                formsubmitPromise,
+                new Promise(resolve => setTimeout(() => resolve(false), 1800))
+            ]);
+
+            return Boolean(formsubmitOk);
         }
 
         function setFormSubmitting(submitBtn, textSpan, isBusy, idleText, busyText) {
@@ -2569,66 +2595,74 @@
                     return;
                 }
 
-                const category = document.getElementById('dispatch-category').value;
-                const machineType = (document.getElementById('dispatch-machine-select') || {}).value || 'Dizel Forklift';
-                const fleetCount = (document.getElementById('dispatch-fleet-count') || {}).value || '1 Adet Makina';
-                const companyOrName = document.getElementById('dispatch-company-input').value.trim();
-                const brandNote = document.getElementById('dispatch-brand-input').value.trim();
-                const phone = document.getElementById('dispatch-phone-input').value.trim();
-                const modeLabel = (document.getElementById('dispatch-mode-input') || {}).value || 'Fiyat Teklifi & Bakım Paketi';
-
-                const randomRef = 'ASN-' + Math.floor(1000 + Math.random() * 9000);
-                if (dispatchRefInput) dispatchRefInput.value = randomRef;
-
                 const idleBtnLabel = activeFormMode === 'emergency'
                     ? '7/24 Acil Servis Talebini Gönder'
                     : 'Teklif / Servis Talebini Gönder';
-                setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, true, idleBtnLabel, 'Gönderiliyor...');
-                if (dispatchErrorBox) dispatchErrorBox.classList.add('hidden');
-                if (dispatchResultBox) dispatchResultBox.classList.add('hidden');
 
-                const emailDelivered = await submitFormToCloudAndEmail(quickDispatchForm, {
-                    _subject: `ASN Özel Forklift Servis ${modeLabel} (#${randomRef}) - ${companyOrName}`,
-                    Referans_No: `#${randomRef}`,
-                    Talep_Modu: modeLabel,
-                    Secilen_Paket_veya_Hizmet: category,
-                    Makina_Tipi: machineType,
-                    Makina_Sayisi: fleetCount,
-                    Firma_veya_Yetkili: companyOrName,
-                    Telefon: phone,
-                    Konum_ve_Not: brandNote,
-                    kvkk_onay: 'Evet'
-                });
+                try {
+                    const category = document.getElementById('dispatch-category').value;
+                    const machineType = (document.getElementById('dispatch-machine-select') || {}).value || 'Dizel Forklift';
+                    const fleetCount = (document.getElementById('dispatch-fleet-count') || {}).value || '1 Adet Makina';
+                    const companyOrName = document.getElementById('dispatch-company-input').value.trim();
+                    const brandNote = document.getElementById('dispatch-brand-input').value.trim();
+                    const phone = document.getElementById('dispatch-phone-input').value.trim();
+                    const modeLabel = (document.getElementById('dispatch-mode-input') || {}).value || 'Fiyat Teklifi & Bakım Paketi';
 
-                setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, false, idleBtnLabel, 'Gönderiliyor...');
+                    const randomRef = 'ASN-' + Math.floor(1000 + Math.random() * 9000);
+                    if (dispatchRefInput) dispatchRefInput.value = randomRef;
 
-                const summaryString = `Kayıt: #${randomRef} | ${modeLabel} | ${category} | ${machineType} (${fleetCount}) | Firma: ${companyOrName} | Tel: ${phone} | Not: ${brandNote}`;
+                    setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, true, idleBtnLabel, 'Gönderiliyor...');
+                    if (dispatchErrorBox) dispatchErrorBox.classList.add('hidden');
+                    if (dispatchResultBox) dispatchResultBox.classList.add('hidden');
 
-                dispatchRefCode.textContent = '#' + randomRef;
-                dispatchSummaryText.textContent = summaryString;
+                    const emailDelivered = await submitFormToCloudAndEmail(quickDispatchForm, {
+                        _subject: `ASN Özel Forklift Servis ${modeLabel} (#${randomRef}) - ${companyOrName}`,
+                        Referans_No: `#${randomRef}`,
+                        Talep_Modu: modeLabel,
+                        Secilen_Paket_veya_Hizmet: category,
+                        Makina_Tipi: machineType,
+                        Makina_Sayisi: fleetCount,
+                        Firma_veya_Yetkili: companyOrName,
+                        Telefon: phone,
+                        Konum_ve_Not: brandNote,
+                        kvkk_onay: 'Evet'
+                    });
 
-                const plainBody = buildDispatchWhatsAppMessage(randomRef);
-                const mailSubject = encodeURIComponent(`ASN Özel Forklift Servis Talebi (#${randomRef}) - ${companyOrName}`);
-                const mailBody = encodeURIComponent(plainBody);
-                const waUrl = `https://wa.me/905339540425?text=${mailBody}`;
+                    setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, false, idleBtnLabel, 'Gönderiliyor...');
 
-                if (dispatchMailtoLink) {
-                    dispatchMailtoLink.href = `mailto:aokty0@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-                }
-                if (dispatchWhatsappLink) {
-                    dispatchWhatsappLink.href = waUrl;
-                }
-                if (dispatchErrorWaLink) {
-                    dispatchErrorWaLink.href = waUrl;
-                }
+                    const summaryString = `Kayıt: #${randomRef} | ${modeLabel} | ${category} | ${machineType} (${fleetCount}) | Firma: ${companyOrName} | Tel: ${phone} | Not: ${brandNote}`;
 
-                if (emailDelivered) {
-                    dispatchResultBox.classList.remove('hidden');
-                } else {
-                    if (dispatchErrorBox) {
-                        dispatchErrorBox.classList.remove('hidden');
-                        dispatchErrorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    dispatchRefCode.textContent = '#' + randomRef;
+                    dispatchSummaryText.textContent = summaryString;
+
+                    const plainBody = buildDispatchWhatsAppMessage(randomRef);
+                    const mailSubject = encodeURIComponent(`ASN Özel Forklift Servis Talebi (#${randomRef}) - ${companyOrName}`);
+                    const mailBody = encodeURIComponent(plainBody);
+                    const waUrl = `https://wa.me/905339540425?text=${mailBody}`;
+
+                    if (dispatchMailtoLink) {
+                        dispatchMailtoLink.href = `mailto:aokty0@gmail.com?subject=${mailSubject}&body=${mailBody}`;
                     }
+                    if (dispatchWhatsappLink) {
+                        dispatchWhatsappLink.href = waUrl;
+                    }
+                    if (dispatchErrorWaLink) {
+                        dispatchErrorWaLink.href = waUrl;
+                    }
+
+                    if (emailDelivered) {
+                        if (dispatchResultBox) {
+                            dispatchResultBox.classList.remove('hidden');
+                            dispatchResultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    } else {
+                        if (dispatchErrorBox) {
+                            dispatchErrorBox.classList.remove('hidden');
+                            dispatchErrorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    }
+                } finally {
+                    setFormSubmitting(dispatchSubmitBtn, dispatchSubmitText, false, idleBtnLabel, 'Gönderiliyor...');
                 }
             });
         }
