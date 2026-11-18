@@ -1,6 +1,6 @@
 # ASN ÖZEL FORKLİFT SERVİS — Kurumsal Statik Web Sitesi
 
-İstanbul ve Marmara Bölgesi genelinde tüm yaygın forklift markaları için 7/24 yerinde mobil arıza tespiti, periyodik bakım, motor/şanzıman revizyonu, elektronik kart onarımı ve yedek parça hizmetleri sunan bağımsız özel teknik servis web sitesi.
+İzmir Işıkkent merkezli olarak Ege Bölgesi ve tüm Türkiye genelinde tüm yaygın forklift markaları için 7/24 yerinde mobil arıza tespiti, periyodik bakım, motor/şanzıman revizyonu, elektronik kart onarımı ve yedek parça hizmetleri sunan bağımsız özel teknik servis web sitesi.
 
 ## Dosya Yapısı
 
