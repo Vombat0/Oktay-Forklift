@@ -60,5 +60,5 @@ npm run watch:css  # Geliştirme sırasında değişiklikleri otomatik derler
 |---|---|---|
 | Google Analytics 4 | `index.html` | Kullanılacaksa `G-XXXXXXXXXX` yerine gerçek GA4 Ölçüm Kimliği girilmelidir |
 | Google Search Console | `index.html` | Meta doğrulama etiketi gerçek doğrulama koduyla güncellenmelidir |
-| Gerçek Saha Fotoğrafları | `.img-placeholder` alanları | Fotoğraflar eklendiğinde `<img loading="lazy" ...>` ile değiştirilmelidir |
+| Gerçek Saha Fotoğrafları | Hizmet/vaka kartları | Gerçek atölye ve saha fotoğrafları eklendiğinde `<img loading="lazy" width height>` ile kullanılmalıdır |
 | CSS Derleme | `assets/styles.css` | Yayına almadan önce `npm run build:css` çalıştırılarak güncel çıktı üretilmelidir |

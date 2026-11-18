@@ -16,15 +16,19 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# NOT: CSS/JS dosya adları derleme çıktısında hash içermediği için
+# uzun önbellek (immutable) KULLANILMAZ. Aksi halde HTML güncellenip CSS
+# güncellenmediğinde tarayıcı eski stilleri kullanır ve sayfa düzeni bozulur.
+# HTML'de assets/styles.css?v=... sürüm etiketi ile birlikte kullanılır.
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/og-gorsel.png"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/favicon.ico"
